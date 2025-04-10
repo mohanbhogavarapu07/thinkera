@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -258,9 +257,9 @@ const Index = () => {
                   <div>
                     <label className="text-sm font-medium mb-1 block">Duration</label>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">< 10 Weeks</Badge>
+                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">{"< 10 Weeks"}</Badge>
                       <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">10-20 Weeks</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">> 20 Weeks</Badge>
+                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">{"> 20 Weeks"}</Badge>
                     </div>
                   </div>
                   <div>
