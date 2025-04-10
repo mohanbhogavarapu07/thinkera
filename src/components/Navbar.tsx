@@ -1,11 +1,14 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -14,30 +17,57 @@ const Navbar = () => {
     document.documentElement.classList.toggle("dark");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  const isActive = (path: string) => {
+    return location.pathname === path ? "text-skill-purple dark:text-skill-purple-light" : "text-gray-700 dark:text-gray-200";
+  };
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-skill-dark/80 backdrop-blur-md shadow-sm">
+    <nav className={`fixed top-0 w-full z-50 backdrop-blur-md transition-all duration-300 ${
+      isScrolled ? "bg-white/90 dark:bg-skill-dark/90 shadow-sm" : "bg-white/80 dark:bg-skill-dark/80"
+    }`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <span className="font-poppins font-bold text-2xl hero-gradient-text">SkillForge</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#courses" className="text-gray-700 dark:text-gray-200 hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors">
+            <Link to="/courses" className={`${isActive("/courses")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Courses
-            </a>
-            <a href="#hackathons" className="text-gray-700 dark:text-gray-200 hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors">
+            </Link>
+            <Link to="/hackathons" className={`${isActive("/hackathons")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Hackathons
-            </a>
-            <a href="#success-stories" className="text-gray-700 dark:text-gray-200 hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors">
+            </Link>
+            <Link to="/success-stories" className={`${isActive("/success-stories")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Success Stories
-            </a>
-            <a href="#corporate" className="text-gray-700 dark:text-gray-200 hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors">
+            </Link>
+            <Link to="/corporate" className={`${isActive("/corporate")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Corporate Training
-            </a>
+            </Link>
             <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-2">
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -59,18 +89,18 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden pt-4 pb-2 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a href="#courses" className="text-gray-700 dark:text-gray-200 py-2 hover:text-skill-purple dark:hover:text-skill-purple-light">
+              <Link to="/courses" className={`${isActive("/courses")} py-2 hover:text-skill-purple dark:hover:text-skill-purple-light`}>
                 Courses
-              </a>
-              <a href="#hackathons" className="text-gray-700 dark:text-gray-200 py-2 hover:text-skill-purple dark:hover:text-skill-purple-light">
+              </Link>
+              <Link to="/hackathons" className={`${isActive("/hackathons")} py-2 hover:text-skill-purple dark:hover:text-skill-purple-light`}>
                 Hackathons
-              </a>
-              <a href="#success-stories" className="text-gray-700 dark:text-gray-200 py-2 hover:text-skill-purple dark:hover:text-skill-purple-light">
+              </Link>
+              <Link to="/success-stories" className={`${isActive("/success-stories")} py-2 hover:text-skill-purple dark:hover:text-skill-purple-light`}>
                 Success Stories
-              </a>
-              <a href="#corporate" className="text-gray-700 dark:text-gray-200 py-2 hover:text-skill-purple dark:hover:text-skill-purple-light">
+              </Link>
+              <Link to="/corporate" className={`${isActive("/corporate")} py-2 hover:text-skill-purple dark:hover:text-skill-purple-light`}>
                 Corporate Training
-              </a>
+              </Link>
               <Button className="button-gradient w-full mt-2">Sign In</Button>
             </div>
           </div>
