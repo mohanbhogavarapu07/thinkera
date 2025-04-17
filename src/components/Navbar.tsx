@@ -1,8 +1,14 @@
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +48,10 @@ const Navbar = () => {
     return location.pathname === path ? "text-skill-purple dark:text-skill-purple-light" : "text-gray-700 dark:text-gray-200";
   };
 
+  const isActiveSubPath = (path: string) => {
+    return location.pathname.startsWith(path) ? "text-skill-purple dark:text-skill-purple-light" : "text-gray-700 dark:text-gray-200";
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 backdrop-blur-md transition-all duration-300 ${
       isScrolled ? "bg-white/90 dark:bg-skill-dark/90 shadow-sm" : "bg-white/80 dark:bg-skill-dark/80"
@@ -68,6 +78,30 @@ const Navbar = () => {
             <Link to="/corporate" className={`${isActive("/corporate")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Corporate Training
             </Link>
+            
+            {/* Blog Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className={`${isActiveSubPath("/blog")} flex items-center hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
+                  Blog <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="/blog/tutorials" className="w-full">Tutorials</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/blog/industry-insights" className="w-full">Industry Insights</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/blog/career-tips" className="w-full">Career Tips</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/blog" className="w-full">All Posts</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-2">
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -101,6 +135,26 @@ const Navbar = () => {
               <Link to="/corporate" className={`${isActive("/corporate")} py-2 hover:text-skill-purple dark:hover:text-skill-purple-light`}>
                 Corporate Training
               </Link>
+              
+              {/* Blog section for mobile */}
+              <div className="py-2">
+                <div className={`${isActiveSubPath("/blog")} font-medium mb-2`}>Blog</div>
+                <div className="pl-4 flex flex-col space-y-2">
+                  <Link to="/blog/tutorials" className="text-gray-600 dark:text-gray-300 hover:text-skill-purple dark:hover:text-skill-purple-light">
+                    Tutorials
+                  </Link>
+                  <Link to="/blog/industry-insights" className="text-gray-600 dark:text-gray-300 hover:text-skill-purple dark:hover:text-skill-purple-light">
+                    Industry Insights
+                  </Link>
+                  <Link to="/blog/career-tips" className="text-gray-600 dark:text-gray-300 hover:text-skill-purple dark:hover:text-skill-purple-light">
+                    Career Tips
+                  </Link>
+                  <Link to="/blog" className="text-gray-600 dark:text-gray-300 hover:text-skill-purple dark:hover:text-skill-purple-light">
+                    All Posts
+                  </Link>
+                </div>
+              </div>
+              
               <Button className="button-gradient w-full mt-2">Sign In</Button>
             </div>
           </div>

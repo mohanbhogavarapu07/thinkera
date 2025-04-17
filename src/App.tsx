@@ -10,6 +10,8 @@ import Courses from "./pages/Courses";
 import Hackathons from "./pages/Hackathons";
 import SuccessStoriesPage from "./pages/SuccessStoriesPage";
 import Corporate from "./pages/Corporate";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 // Create a new QueryClient instance with default options
@@ -36,6 +38,14 @@ const App = () => {
               <Route path="/hackathons" element={<Hackathons />} />
               <Route path="/success-stories" element={<SuccessStoriesPage />} />
               <Route path="/corporate" element={<Corporate />} />
+              
+              {/* Blog Routes */}
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/blog/tutorials" element={<Blog />} />
+              <Route path="/blog/industry-insights" element={<Blog />} />
+              <Route path="/blog/career-tips" element={<Blog />} />
+              
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
