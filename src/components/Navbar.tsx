@@ -78,29 +78,13 @@ const Navbar = () => {
             <Link to="/corporate" className={`${isActive("/corporate")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
               Corporate Training
             </Link>
+            <Link to="/leadership" className={`${isActive("/leadership")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
+            Leaderboard            </Link>
+            <Link to="/contact" className={`${isActive("/contact")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
+            Contact        </Link>
+            <Link to="/blog" className={`${isActive("/blog")} hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
+            Blog         </Link>
             
-            {/* Blog Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className={`${isActiveSubPath("/blog")} flex items-center hover:text-skill-purple dark:hover:text-skill-purple-light transition-colors`}>
-                  Blog <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link to="/blog/tutorials" className="w-full">Tutorials</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/blog/industry-insights" className="w-full">Industry Insights</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/blog/career-tips" className="w-full">Career Tips</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/blog" className="w-full">All Posts</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
             
             <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-2">
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
