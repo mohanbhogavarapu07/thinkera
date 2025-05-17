@@ -13,159 +13,6 @@ import {
 const courseDataExtended = [
   {
     id: 1,
-    title: 'ServiceNow Development',
-    description: 'Master the ServiceNow platform and become a certified developer.',
-    longDescription: 'In this comprehensive course, you will learn to develop custom applications, workflows, and integrations on the ServiceNow platform. From basic administration to advanced scripting, this course covers everything you need to become a certified ServiceNow developer.',
-    icon: 'Server',
-    category: 'Platform',
-    level: 'Intermediate',
-    duration: '12 weeks',
-    certification: true,
-    price: '$1,299',
-    instructor: 'Alex Morgan',
-    startDates: ['July 15, 2025', 'September 10, 2025'],
-    color: 'from-purple-500 to-indigo-600',
-    modules: [
-      'ServiceNow Fundamentals and Administration',
-      'Form Design and UI Policies',
-      'Business Rules and Client Scripts',
-      'Workflow and Flow Designer',
-      'Integration and Web Services',
-      'Performance Analytics and Reporting',
-      'Application Development Best Practices',
-      'Certification Preparation'
-    ],
-    skills: [
-      'ServiceNow Administration',
-      'JavaScript',
-      'ITIL Process Implementation',
-      'Workflow Automation',
-      'REST and SOAP API Integration',
-      'Application Development'
-    ],
-    prerequisites: [
-      'Basic programming knowledge',
-      'Understanding of IT service management concepts',
-      'Familiarity with web technologies (HTML, CSS)'
-    ]
-  },
-  {
-    id: 2,
-    title: 'Salesforce Administration',
-    description: 'Learn to manage and customize Salesforce for enterprise needs.',
-    longDescription: 'This Salesforce Administration course will provide you with the knowledge and skills needed to effectively manage and customize Salesforce for your organization. You\'ll learn how to configure the platform, manage users, create custom objects, and automate business processes.',
-    icon: 'Database',
-    category: 'Platform',
-    level: 'Beginner',
-    duration: '8 weeks',
-    certification: true,
-    price: '$999',
-    instructor: 'Sarah Johnson',
-    startDates: ['June 20, 2025', 'August 15, 2025'],
-    color: 'from-blue-500 to-cyan-600',
-    modules: [
-      'Salesforce Platform Fundamentals',
-      'User Management and Security',
-      'Data Management and Import',
-      'Objects, Fields, and Relationships',
-      'Process Automation with Workflow Rules',
-      'Approval Processes and Process Builder',
-      'Reports and Dashboards',
-      'Mobile Administration'
-    ],
-    skills: [
-      'User Administration',
-      'Data Management',
-      'Custom Objects and Fields',
-      'Process Automation',
-      'Report Building',
-      'Dashboard Creation'
-    ],
-    prerequisites: [
-      'No programming experience required',
-      'Basic understanding of CRM concepts',
-      'Familiarity with cloud-based applications'
-    ]
-  },
-  {
-    id: 3,
-    title: 'AWS Cloud Architecture',
-    description: 'Design and implement scalable systems using AWS services.',
-    longDescription: 'This advanced course will teach you how to design, implement, and manage scalable, highly available, and fault-tolerant systems on Amazon Web Services. You\'ll learn to select the appropriate AWS services for computing, database, storage, security, and networking components based on requirements.',
-    icon: 'Cloud',
-    category: 'Cloud',
-    level: 'Advanced',
-    duration: '16 weeks',
-    certification: true,
-    price: '$1,799',
-    instructor: 'David Chen',
-    startDates: ['July 5, 2025', 'October 10, 2025'],
-    color: 'from-orange-500 to-yellow-600',
-    modules: [
-      'AWS Architectural Principles',
-      'Compute Services (EC2, Lambda, ECS)',
-      'Storage Solutions (S3, EBS, EFS)',
-      'Database Services (RDS, DynamoDB, Redshift)',
-      'Networking (VPC, Route 53, CloudFront)',
-      'Security and IAM',
-      'Serverless Architecture',
-      'Cost Optimization and Well-Architected Framework'
-    ],
-    skills: [
-      'AWS Service Selection',
-      'High-Availability Design',
-      'Disaster Recovery Planning',
-      'Security Implementation',
-      'Cost Optimization',
-      'Infrastructure as Code'
-    ],
-    prerequisites: [
-      'Basic understanding of cloud computing concepts',
-      'Familiarity with Linux/Unix command line',
-      'Prior experience with web applications and networks'
-    ]
-  },
-  {
-    id: 4,
-    title: 'DevOps Engineering',
-    description: 'Master CI/CD pipelines, containers, and infrastructure as code.',
-    longDescription: 'This comprehensive DevOps course covers the entire software delivery lifecycle, focusing on automation, collaboration, and integration. You\'ll learn to implement CI/CD pipelines, containerization, infrastructure as code, and modern monitoring practices to improve software delivery speed and reliability.',
-    icon: 'Code',
-    category: 'Engineering',
-    level: 'Advanced',
-    duration: '14 weeks',
-    certification: true,
-    price: '$1,599',
-    instructor: 'Michael Stevens',
-    startDates: ['August 1, 2025', 'November 5, 2025'],
-    color: 'from-green-500 to-emerald-600',
-    modules: [
-      'DevOps Fundamentals and Culture',
-      'Version Control with Git',
-      'Continuous Integration with Jenkins/GitLab CI',
-      'Infrastructure as Code (Terraform, CloudFormation)',
-      'Configuration Management (Ansible, Chef)',
-      'Containerization with Docker',
-      'Orchestration with Kubernetes',
-      'Monitoring and Logging'
-    ],
-    skills: [
-      'CI/CD Pipeline Implementation',
-      'Docker Container Management',
-      'Kubernetes Orchestration',
-      'Infrastructure Automation',
-      'Monitoring and Alerting',
-      'Release Management'
-    ],
-    prerequisites: [
-      'Understanding of Linux/Unix systems',
-      'Basic programming/scripting knowledge',
-      'Familiarity with cloud platforms',
-      'Experience with web applications'
-    ]
-  },
-  {
-    id: 5,
     title: 'AI & Machine Learning',
     description: 'Build intelligent applications with modern AI frameworks.',
     longDescription: 'This course provides a comprehensive introduction to artificial intelligence and machine learning concepts, algorithms, and applications. You\'ll learn to build predictive models, natural language processing systems, and computer vision applications using industry-standard frameworks like TensorFlow and PyTorch.',
@@ -204,150 +51,197 @@ const courseDataExtended = [
     ]
   },
   {
-    id: 6,
-    title: 'Corporate Innovation',
-    description: 'Customized training programs for enterprises and teams.',
-    longDescription: 'Our Corporate Innovation program is a customized training solution designed for enterprises and teams looking to adopt new technologies and methodologies. We work closely with your organization to identify skill gaps and design a tailored curriculum that addresses your specific business challenges and objectives.',
-    icon: 'Users',
-    category: 'Business',
-    level: 'All Levels',
-    duration: 'Custom',
-    certification: false,
-    price: 'Custom Pricing',
-    instructor: 'Enterprise Training Team',
-    startDates: ['Flexible Scheduling'],
-    color: 'from-brand-purple to-brand-teal',
-    logo: '/path/to/corporate-innovation-logo.png',
-    modules: [
-      'Technology Landscape Assessment',
-      'Custom Curriculum Development',
-      'Hands-on Workshops',
-      'Team Collaboration Exercises',
-      'Project-Based Learning',
-      'Progress Tracking and Reporting',
-      'Implementation Coaching',
-      'Continuous Support'
-    ],
-    skills: [
-      'Technology Adoption',
-      'Process Optimization',
-      'Team Collaboration',
-      'Project Management',
-      'Change Management',
-      'Innovation Mindset'
-    ],
-    prerequisites: [
-      'Varies based on program',
-      'No specific technical prerequisites',
-      'Commitment from management and participants'
-    ]
-  },
-  {
-    id: 7,
-    title: 'Data Science Fundamentals',
-    description: 'Learn the basics of data science and analytics.',
-    longDescription: 'This course introduces you to the fundamental concepts of data science, including data analysis, visualization, and statistical methods. You will learn how to use popular tools and libraries to analyze data and derive insights.',
-    icon: 'Database',
-    category: 'Data Science',
+    id: 2,
+    title: 'Python for Data Science',
+    description: 'Learn Python programming specifically for data analysis, visualization, and machine learning.',
+    longDescription: 'Master Python programming for data science and machine learning applications. This course covers essential libraries like NumPy, Pandas, Matplotlib, and Scikit-learn, along with practical projects in data analysis and visualization.',
+    icon: 'Brain',
+    category: 'AI',
     level: 'Beginner',
-    duration: '10 weeks',
+    duration: '8 weeks',
     certification: true,
-    price: '$1,499',
-    instructor: 'Dr. John Smith',
+    price: '$999',
+    instructor: 'Dr. Michael Chen',
     startDates: ['July 10, 2025', 'October 5, 2025'],
-    color: 'from-blue-500 to-cyan-600',
+    color: 'from-yellow-500 to-yellow-600',
     modules: [
-      'Introduction to Data Science',
-      'Data Analysis and Visualization',
-      'Statistical Methods',
-      'Machine Learning Basics',
-      'Data Ethics and Privacy',
-      'Project Work'
+      'Python Programming Fundamentals',
+      'Data Structures and Algorithms',
+      'NumPy and Pandas for Data Manipulation',
+      'Data Visualization with Matplotlib and Seaborn',
+      'Statistical Analysis with Python',
+      'Introduction to Machine Learning with Scikit-learn',
+      'Data Cleaning and Preprocessing',
+      'Real-world Data Science Projects'
     ],
     skills: [
+      'Python Programming',
       'Data Analysis',
       'Data Visualization',
       'Statistical Analysis',
-      'Machine Learning',
-      'Data Ethics',
-      'Project Management'
+      'Machine Learning Basics',
+      'Data Preprocessing'
     ],
     prerequisites: [
-      'Basic understanding of mathematics',
-      'Familiarity with programming concepts',
-      'No prior data science experience required'
+      'Basic programming concepts',
+      'High school level mathematics',
+      'No prior Python experience required'
     ]
   },
   {
-    id: 8,
-    title: 'Cybersecurity Essentials',
-    description: 'Master the fundamentals of cybersecurity.',
-    longDescription: 'This course covers essential cybersecurity concepts, including threat detection, risk management, and security best practices. You will learn how to protect systems and networks from cyber threats and vulnerabilities.',
-    icon: 'Shield',
-    category: 'Security',
-    level: 'Intermediate',
+    id: 3,
+    title: 'Deep Learning & Neural Networks',
+    description: 'Master deep learning concepts, neural network architectures, and advanced AI model development.',
+    longDescription: 'Dive deep into neural networks and advanced deep learning techniques. Learn to build and train complex neural network architectures, implement state-of-the-art models, and deploy them in production environments.',
+    icon: 'Brain',
+    category: 'AI',
+    level: 'Advanced',
     duration: '12 weeks',
     certification: true,
-    price: '$1,699',
-    instructor: 'Jane Doe',
-    startDates: ['August 15, 2025', 'November 10, 2025'],
-    color: 'from-green-500 to-emerald-600',
+    price: '$1,799',
+    instructor: 'Dr. Sarah Johnson',
+    startDates: ['August 1, 2025', 'November 5, 2025'],
+    color: 'from-purple-500 to-indigo-600',
     modules: [
-      'Introduction to Cybersecurity',
-      'Threat Detection and Analysis',
-      'Risk Management',
-      'Security Policies and Procedures',
-      'Incident Response',
-      'Ethical Hacking'
+      'Neural Network Fundamentals',
+      'Convolutional Neural Networks (CNNs)',
+      'Recurrent Neural Networks (RNNs)',
+      'Transformer Architecture',
+      'Generative Adversarial Networks (GANs)',
+      'Transfer Learning and Fine-tuning',
+      'Model Optimization and Deployment',
+      'Advanced Research Topics'
     ],
     skills: [
-      'Threat Detection',
-      'Risk Management',
-      'Security Policies',
-      'Incident Response',
-      'Ethical Hacking',
-      'Network Security'
+      'Deep Learning Architecture Design',
+      'CNN and RNN Implementation',
+      'Transformer Models',
+      'GAN Development',
+      'Model Optimization',
+      'Production Deployment'
     ],
     prerequisites: [
-      'Basic understanding of IT concepts',
-      'Familiarity with networking',
-      'No prior cybersecurity experience required'
+      'Strong Python programming skills',
+      'Understanding of machine learning fundamentals',
+      'Experience with PyTorch or TensorFlow',
+      'Basic calculus and linear algebra'
     ]
   },
   {
-    id: 9,
-    title: 'Blockchain Development',
-    description: 'Learn to build decentralized applications using blockchain technology.',
-    longDescription: 'This course provides an in-depth understanding of blockchain technology and how to develop decentralized applications (DApps). You will learn about smart contracts, consensus mechanisms, and blockchain platforms.',
-    icon: 'Code',
-    category: 'Blockchain',
+    id: 4,
+    title: 'Natural Language Processing',
+    description: 'Learn to build AI systems that understand and process human language using modern NLP techniques.',
+    longDescription: 'Explore the fascinating world of Natural Language Processing (NLP) and learn to build systems that can understand, interpret, and generate human language. Master modern NLP techniques and transformer-based models.',
+    icon: 'Brain',
+    category: 'AI',
+    level: 'Intermediate',
+    duration: '10 weeks',
+    certification: true,
+    price: '$1,499',
+    instructor: 'Dr. Alex Wong',
+    startDates: ['July 15, 2025', 'October 10, 2025'],
+    color: 'from-blue-500 to-cyan-600',
+    modules: [
+      'NLP Fundamentals and Text Processing',
+      'Word Embeddings and Vector Representations',
+      'Sequence Models and RNNs for NLP',
+      'Transformer Architecture and BERT',
+      'Text Classification and Sentiment Analysis',
+      'Named Entity Recognition',
+      'Text Generation and Summarization',
+      'NLP Applications and Projects'
+    ],
+    skills: [
+      'Text Processing',
+      'Word Embeddings',
+      'Transformer Models',
+      'Text Classification',
+      'Named Entity Recognition',
+      'Text Generation'
+    ],
+    prerequisites: [
+      'Python programming experience',
+      'Basic machine learning knowledge',
+      'Understanding of deep learning concepts',
+      'Familiarity with PyTorch or TensorFlow'
+    ]
+  },
+  {
+    id: 5,
+    title: 'Computer Vision & Image Processing',
+    description: 'Develop AI systems that can analyze and understand visual data using computer vision techniques.',
+    longDescription: 'Learn to build AI systems that can see and understand visual data. This course covers computer vision fundamentals, image processing techniques, and deep learning approaches for visual recognition tasks.',
+    icon: 'Brain',
+    category: 'AI',
     level: 'Advanced',
     duration: '14 weeks',
     certification: true,
-    price: '$1,799',
-    instructor: 'Robert Johnson',
-    startDates: ['September 5, 2025', 'December 10, 2025'],
-    color: 'from-purple-500 to-indigo-600',
+    price: '$1,699',
+    instructor: 'Dr. Maria Rodriguez',
+    startDates: ['August 15, 2025', 'November 10, 2025'],
+    color: 'from-green-500 to-emerald-600',
     modules: [
-      'Introduction to Blockchain',
-      'Smart Contracts',
-      'Consensus Mechanisms',
-      'Blockchain Platforms',
-      'DApp Development',
-      'Security and Best Practices'
+      'Computer Vision Fundamentals',
+      'Image Processing Techniques',
+      'Feature Detection and Matching',
+      'Convolutional Neural Networks',
+      'Object Detection and Recognition',
+      'Image Segmentation',
+      'Video Analysis',
+      'Real-time Computer Vision Applications'
     ],
     skills: [
-      'Smart Contract Development',
-      'Blockchain Platforms',
-      'DApp Development',
-      'Security Best Practices',
-      'Consensus Mechanisms',
-      'Blockchain Architecture'
+      'Image Processing',
+      'Feature Detection',
+      'CNN Implementation',
+      'Object Detection',
+      'Image Segmentation',
+      'Video Analysis'
     ],
     prerequisites: [
-      'Programming experience in JavaScript or Solidity',
-      'Understanding of cryptography',
-      'No prior blockchain experience required'
+      'Python programming experience',
+      'Understanding of deep learning',
+      'Basic linear algebra',
+      'Familiarity with PyTorch or TensorFlow'
+    ]
+  },
+  {
+    id: 6,
+    title: 'AI Ethics & Responsible AI',
+    description: 'Learn about ethical considerations, bias mitigation, and responsible development of AI systems.',
+    longDescription: 'Explore the ethical implications of AI and learn to develop responsible AI systems. This course covers bias detection and mitigation, fairness in AI, transparency, and ethical decision-making in AI development.',
+    icon: 'Brain',
+    category: 'AI',
+    level: 'Intermediate',
+    duration: '6 weeks',
+    certification: true,
+    price: '$899',
+    instructor: 'Dr. James Wilson',
+    startDates: ['September 1, 2025', 'December 1, 2025'],
+    color: 'from-orange-500 to-yellow-600',
+    modules: [
+      'AI Ethics Fundamentals',
+      'Bias Detection and Mitigation',
+      'Fairness in Machine Learning',
+      'Transparency and Explainability',
+      'Privacy and Security in AI',
+      'Ethical Decision Making',
+      'AI Governance and Policy',
+      'Responsible AI Development'
+    ],
+    skills: [
+      'Bias Detection',
+      'Fairness Assessment',
+      'Model Explainability',
+      'Privacy Protection',
+      'Ethical Decision Making',
+      'AI Governance'
+    ],
+    prerequisites: [
+      'Basic understanding of AI/ML concepts',
+      'No technical prerequisites required',
+      'Interest in ethical considerations',
+      'Critical thinking skills'
     ]
   }
 ];

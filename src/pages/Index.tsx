@@ -5,82 +5,85 @@ import CourseCard from "@/components/CourseCard";
 import HackathonSection from "@/components/HackathonSection";
 import SuccessStories from "@/components/SuccessStories";
 import Footer from "@/components/Footer";
-import { Filter, Search, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
+import { Filter, Search, BookOpen, ChevronDown, ChevronUp, Cloud, Database, Server, Code, Brain, Users, Clock, Award, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { allCourses } from "@/pages/Courses";
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const courseData = [
   {
     id: 1,
-    title: "ServiceNow Administration & Development",
-    description: "Master ServiceNow platform administration, scripting, and application development with hands-on projects.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Intermediate",
-    duration: "12 Weeks",
+    title: 'ServiceNow Development',
+    description: 'Master the ServiceNow platform and become a certified developer. Learn to create applications, workflows, and integrations.',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'Intermediate',
+    duration: '12 weeks',
     rating: 4.8,
-    certification: "ServiceNow Certified",
-    category: "Platform Development"
+    certification: 'ServiceNow Certified',
+    category: 'Platform'
   },
   {
     id: 2,
-    title: "Salesforce Developer Certification",
-    description: "Comprehensive training on Salesforce development, Apex programming, and Lightning components.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Advanced",
-    duration: "16 Weeks",
+    title: 'Salesforce Administration',
+    description: 'Learn to manage and customize Salesforce for enterprise needs. Master user management, security, and custom objects.',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'Beginner',
+    duration: '8 weeks',
     rating: 4.7,
-    certification: "Salesforce Developer I",
-    category: "CRM"
+    certification: 'Salesforce Admin',
+    category: 'Platform'
   },
   {
     id: 3,
-    title: "AI/ML Engineering Bootcamp",
-    description: "In-depth training on machine learning algorithms, deep learning, and AI application development.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Advanced",
-    duration: "24 Weeks",
+    title: 'AWS Cloud Architecture',
+    description: 'Design and implement scalable systems using AWS services. Master EC2, S3, Lambda, and more.',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'Advanced',
+    duration: '16 weeks',
     rating: 4.9,
-    certification: "AI/ML Professional",
-    category: "Artificial Intelligence"
+    certification: 'AWS Certified',
+    category: 'Cloud'
   },
   {
     id: 4,
-    title: "AWS Solutions Architect",
-    description: "Design and deploy scalable, highly available systems on Amazon Web Services cloud infrastructure.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Intermediate",
-    duration: "14 Weeks",
-    rating: 4.6,
-    certification: "AWS Certified",
-    category: "Cloud Computing"
+    title: 'DevOps Engineering',
+    description: 'Master CI/CD pipelines, containers, and infrastructure as code. Learn Docker, Kubernetes, and Jenkins.',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'Advanced',
+    duration: '14 weeks',
+    rating: 4.8,
+    certification: 'DevOps Professional',
+    category: 'Engineering'
   },
   {
     id: 5,
-    title: "Full Stack Web Development",
-    description: "End-to-end web development with React, Node.js, and modern frameworks for building scalable applications.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Beginner to Intermediate",
-    duration: "20 Weeks",
-    rating: 4.7,
-    certification: "Full Stack Developer",
-    category: "Web Development"
+    title: 'AI & Machine Learning',
+    description: 'Build intelligent applications with modern AI frameworks. Master TensorFlow, PyTorch, and data science fundamentals.',
+    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'Intermediate',
+    duration: '16 weeks',
+    rating: 4.9,
+    certification: 'AI/ML Professional',
+    category: 'AI'
   },
   {
     id: 6,
-    title: "DevOps Engineering & CI/CD",
-    description: "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&h=300&q=80",
-    level: "Intermediate",
-    duration: "16 Weeks",
-    rating: 4.5,
-    certification: "DevOps Professional",
-    category: "DevOps"
+    title: 'Corporate Innovation',
+    description: 'Customized training programs for enterprises and teams. Focus on specific technologies and business outcomes.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&h=300&q=80',
+    level: 'All Levels',
+    duration: 'Custom',
+    rating: 4.7,
+    certification: 'Enterprise Solutions',
+    category: 'Business'
   }
 ];
 
 const corporateSection = (
-  <section id="corporate" className="py-16 bg-gray-50 dark:bg-skill-dark">
+  <section id="corporate" className="py-16 bg-gray-50 dark:bg-thinkera-dark">
     <div className="container mx-auto px-4">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">
@@ -92,8 +95,8 @@ const corporateSection = (
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-8 card-hover">
-          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-skill-purple/10 text-skill-purple mb-6">
+        <div className="bg-white dark:bg-thinkera-dark/90 rounded-xl shadow-md p-8 card-hover">
+          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-thinkera-purple/10 text-thinkera-purple mb-6">
             <BookOpen className="h-8 w-8" />
           </div>
           <h3 className="text-xl font-semibold mb-3">
@@ -104,23 +107,23 @@ const corporateSection = (
           </p>
           <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Specialized curriculum development
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Hands-on workshops and labs
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Progress tracking and reporting
             </li>
           </ul>
           <Button className="w-full button-gradient">Request Details</Button>
         </div>
         
-        <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-8 card-hover">
-          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-skill-purple/10 text-skill-purple mb-6">
+        <div className="bg-white dark:bg-thinkera-dark/90 rounded-xl shadow-md p-8 card-hover">
+          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-thinkera-purple/10 text-thinkera-purple mb-6">
             <BookOpen className="h-8 w-8" />
           </div>
           <h3 className="text-xl font-semibold mb-3">
@@ -131,23 +134,23 @@ const corporateSection = (
           </p>
           <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Bulk certification training
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Dedicated success managers
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Certification exam vouchers
             </li>
           </ul>
           <Button className="w-full button-gradient">Request Details</Button>
         </div>
         
-        <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-8 card-hover">
-          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-skill-purple/10 text-skill-purple mb-6">
+        <div className="bg-white dark:bg-thinkera-dark/90 rounded-xl shadow-md p-8 card-hover">
+          <div className="h-16 w-16 flex items-center justify-center rounded-full bg-thinkera-purple/10 text-thinkera-purple mb-6">
             <BookOpen className="h-8 w-8" />
           </div>
           <h3 className="text-xl font-semibold mb-3">
@@ -158,15 +161,15 @@ const corporateSection = (
           </p>
           <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Pre-trained talent pool
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Customized hackathons
             </li>
             <li className="flex items-center">
-              <div className="h-1.5 w-1.5 rounded-full bg-skill-purple mr-2"></div>
+              <div className="h-1.5 w-1.5 rounded-full bg-thinkera-purple mr-2"></div>
               Direct placement opportunities
             </li>
           </ul>
@@ -175,7 +178,7 @@ const corporateSection = (
       </div>
       
       <div className="mt-12 text-center">
-        <a href="#" className="inline-flex items-center text-skill-purple dark:text-skill-purple-light hover:underline font-medium">
+        <a href="#" className="inline-flex items-center text-thinkera-purple dark:text-thinkera-purple-light hover:underline font-medium">
           View All Corporate Solutions
           <ChevronDown className="ml-1 h-4 w-4" />
         </a>
@@ -186,6 +189,23 @@ const corporateSection = (
 
 const Index = () => {
   const [showFilters, setShowFilters] = useState(false);
+  const [showAllCourses, setShowAllCourses] = useState(false);
+  const location = window.location.pathname;
+  
+  // Get first 3 courses for the home page initially
+  const featuredCourses = allCourses.slice(0, showAllCourses ? 6 : 3);
+  
+  const handleViewAllClick = () => {
+    if (location === '/') {
+      setShowAllCourses(!showAllCourses);
+    } else if (location.startsWith('/courses/')) {
+      // If on course details page, go back to home page courses section
+      window.location.href = '/#courses';
+    } else {
+      // If on courses page, stay on courses page
+      window.location.href = '/courses';
+    }
+  };
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -206,108 +226,66 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6 md:mb-0">
-                <div className="relative">
-                  <Search className="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-                  <Input
-                    placeholder="Search courses..."
-                    className="pl-10 w-full sm:w-64"
-                  />
-                </div>
-                <Button 
-                  variant="outline" 
-                  className="inline-flex items-center"
-                  onClick={() => setShowFilters(!showFilters)}
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  Filters
-                  {showFilters ? (
-                    <ChevronUp className="h-4 w-4 ml-2" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4 ml-2" />
-                  )}
-                </Button>
-              </div>
-              
-              <div className="flex space-x-2">
-                <a href="#" className="bg-white dark:bg-skill-dark/50 border hover:bg-gray-50 dark:hover:bg-skill-dark/80 transition-colors px-4 py-2 rounded-lg text-sm">
-                  All
-                </a>
-                <a href="#" className="bg-skill-purple text-white px-4 py-2 rounded-lg text-sm">
-                  Popular
-                </a>
-                <a href="#" className="bg-white dark:bg-skill-dark/50 border hover:bg-gray-50 dark:hover:bg-skill-dark/80 transition-colors px-4 py-2 rounded-lg text-sm">
-                  New
-                </a>
-              </div>
-            </div>
-            
-            {showFilters && (
-              <div className="bg-white dark:bg-skill-dark/80 p-4 rounded-lg mb-8 animate-fade-in">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                  <div>
-                    <label className="text-sm font-medium mb-1 block">Skill Level</label>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Beginner</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Intermediate</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Advanced</Badge>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredCourses.map((course) => (
+                <Card key={course.id} className="h-full card-hover">
+                  <CardContent className="p-6 h-full flex flex-col">
+                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${course.color} text-white flex items-center justify-center mb-4`}>
+                      <course.icon size={24} />
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-1 block">Duration</label>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">{"< 10 Weeks"}</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">10-20 Weeks</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">{"> 20 Weeks"}</Badge>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="bg-brand-purple bg-opacity-10 text-brand-purple text-xs font-medium px-2.5 py-0.5 rounded">
+                        {course.category}
+                      </span>
+                      <span className="text-gray-500 text-sm">
+                        {course.level}
+                      </span>
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-1 block">Certification</label>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">ServiceNow</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Salesforce</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">AWS</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">AI/ML</Badge>
+                    <h3 className="text-xl font-semibold text-brand-dark mb-2">{course.title}</h3>
+                    <p className="text-gray-600 mb-4 flex-grow">{course.description}</p>
+                    <div className="mt-auto pt-4 space-y-4 border-t border-gray-100">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <Clock size={16} className="text-gray-500 mr-2" />
+                          <span className="text-gray-700">{course.duration}</span>
+                        </div>
+                        {course.certification && (
+                          <div className="flex items-center">
+                            <Award size={16} className="text-brand-purple mr-2" />
+                            <span className="text-brand-purple">Certification</span>
+                          </div>
+                        )}
+                      </div>
+                      <Link to={`/courses/${course.id}`}>
+                        <Button className="w-full button-gradient">View Details <ChevronRight size={16} className="ml-1" /></Button>
+                      </Link>
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-1 block">Tech Stack</label>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">JavaScript</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Python</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Java</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-skill-purple/10">Cloud</Badge>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-end mt-4">
-                  <Button variant="ghost" className="mr-2">Reset</Button>
-                  <Button className="bg-skill-purple text-white hover:bg-skill-purple-dark">Apply Filters</Button>
-                </div>
-              </div>
-            )}
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courseData.map((course) => (
-                <CourseCard
-                  key={course.id}
-                  title={course.title}
-                  description={course.description}
-                  image={course.image}
-                  level={course.level}
-                  duration={course.duration}
-                  rating={course.rating}
-                  certification={course.certification}
-                  category={course.category}
-                />
+                  </CardContent>
+                </Card>
               ))}
             </div>
             
             <div className="mt-12 text-center">
-              <Button className="button-gradient">
-                View All Courses
-                <ChevronDown className="ml-2 h-4 w-4" />
+              <Button 
+                className="button-gradient"
+                onClick={handleViewAllClick}
+              >
+                {location === '/' ? (
+                  showAllCourses ? 'Show Less' : 'View All Courses'
+                ) : location.startsWith('/courses/') ? (
+                  'Back to Home Courses'
+                ) : (
+                  'Back to All Courses'
+                )}
+                {location === '/' ? (
+                  showAllCourses ? (
+                    <ChevronUp className="ml-2 h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  )
+                ) : (
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>

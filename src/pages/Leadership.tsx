@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search, Trophy, Filter, Medal, Award } from "lucide-react";
 
-const leaderboardData = [
+export const leaderboardData = [
   {
     id: 1,
     rank: 1,
@@ -173,7 +173,7 @@ const Leaderboard = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900/50">
       <Navbar />
       <main className="pt-16">
-        <section className="py-12 md:py-16 bg-gradient-to-r from-skill-purple to-skill-blue text-white dark:from-skill-purple/90 dark:to-skill-blue/90">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-thinkera-purple to-thinkera-blue text-white dark:from-thinkera-purple/90 dark:to-thinkera-blue/90">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Leaderboard</h1>
@@ -396,7 +396,7 @@ const Leaderboard = () => {
           </div>
         </section>
         
-        <section className="py-16 bg-gradient-to-r from-skill-purple to-skill-blue text-white dark:from-skill-purple/90 dark:to-skill-blue/90">
+        <section className="py-16 bg-gradient-to-r from-thinkera-purple to-thinkera-blue text-white dark:from-thinkera-purple/90 dark:to-thinkera-blue/90">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-3xl mx-auto">
               <div className="mb-8">
@@ -411,7 +411,7 @@ const Leaderboard = () => {
               <div className="inline-flex flex-wrap gap-4 justify-center">
                 <a 
                   href="/hackathons" 
-                  className="px-6 py-3 bg-white text-skill-purple hover:bg-gray-100 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
+                  className="px-6 py-3 bg-white text-thinkera-purple hover:bg-gray-100 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   View Upcoming Events
                 </a>

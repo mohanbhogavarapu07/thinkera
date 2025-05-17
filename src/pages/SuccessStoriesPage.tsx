@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,15 +31,15 @@ const Testimonial: React.FC<TestimonialProps> = ({
   salaryStat,
 }) => {
   return (
-    <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-6 card-hover">
+    <div className="bg-white dark:bg-thinkera-dark/90 rounded-xl shadow-md p-6 card-hover">
       <div className="flex items-start mb-4">
         <div className="relative mr-4">
           <img 
             src={image} 
             alt={name} 
-            className="w-14 h-14 rounded-full object-cover border-2 border-skill-purple/30" 
+            className="w-14 h-14 rounded-full object-cover border-2 border-thinkera-purple/30" 
           />
-          <Quote className="absolute -bottom-2 -right-2 h-6 w-6 bg-skill-purple text-white p-1 rounded-full" />
+          <Quote className="absolute -bottom-2 -right-2 h-6 w-6 bg-thinkera-purple text-white p-1 rounded-full" />
         </div>
         <div>
           <h4 className="font-semibold">{name}</h4>
@@ -53,7 +52,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
             </p>
           )}
           {placement && (
-            <div className="text-xs text-skill-purple mt-1">
+            <div className="text-xs text-thinkera-purple mt-1">
               {placement}
             </div>
           )}
@@ -180,7 +179,7 @@ const corporateTestimonials = [
     role: "Chief Technology Officer",
     company: "GlobalTech Solutions",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
-    quote: "Partnering with SkillForge to upskill our IT department in ServiceNow has increased our implementation efficiency by 40% and reduced support tickets by 25%.",
+    quote: "Partnering with ThinkEra to upskill our IT department in ServiceNow has increased our implementation efficiency by 40% and reduced support tickets by 25%.",
     companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "We trained 35 team members through a customized ServiceNow program, resulting in faster deployment cycles and improved internal customer satisfaction.",
   },
@@ -192,7 +191,7 @@ const corporateTestimonials = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The specialized Salesforce training program has been transformative for our sales and customer service teams, enabling us to fully leverage our CRM investment.",
     companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
-    detailedStory: "Through SkillForge's corporate training, we've certified over 50 employees in Salesforce, eliminating our dependency on external consultants for system management.",
+    detailedStory: "Through ThinkEra's corporate training, we've certified over 50 employees in Salesforce, eliminating our dependency on external consultants for system management.",
   },
   {
     id: 3,
@@ -212,7 +211,7 @@ const SuccessStoriesPage = () => {
       <Navbar />
       
       <main className="flex-grow pt-20">
-        <div className="bg-gradient-to-r from-skill-purple/90 to-blue-600/90 text-white py-20">
+        <div className="bg-gradient-to-r from-thinkera-purple/90 to-blue-600/90 text-white py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Success Stories</h1>
             <p className="text-lg md:text-xl max-w-2xl opacity-90">
@@ -298,7 +297,7 @@ const SuccessStoriesPage = () => {
             </Tabs>
             
             <div className="mt-16">
-              <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-8">
+              <div className="bg-white dark:bg-thinkera-dark/90 rounded-xl shadow-md p-8">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-semibold mb-2">Placement Statistics</h3>
                   <p className="text-gray-600 dark:text-gray-400">Real-time metrics from our placement cell</p>
@@ -306,25 +305,25 @@ const SuccessStoriesPage = () => {
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-skill-purple mb-2">98%</div>
+                    <div className="text-4xl font-bold text-thinkera-purple mb-2">98%</div>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Placement Rate</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-skill-purple mb-2">1,200+</div>
+                    <div className="text-4xl font-bold text-thinkera-purple mb-2">1,200+</div>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Students Placed</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-skill-purple mb-2">45+</div>
+                    <div className="text-4xl font-bold text-thinkera-purple mb-2">45+</div>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Partner Companies</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-skill-purple mb-2">₹8.2L</div>
+                    <div className="text-4xl font-bold text-thinkera-purple mb-2">₹8.2L</div>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">Average CTC</p>
                   </div>
                 </div>
                 
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 dark:bg-skill-dark/50 rounded-lg p-4 text-center">
+                  <div className="bg-gray-50 dark:bg-thinkera-dark/50 rounded-lg p-4 text-center">
                     <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-600 mb-3">
                       <Award className="h-6 w-6" />
                     </div>
@@ -332,7 +331,7 @@ const SuccessStoriesPage = () => {
                     <p className="text-sm text-gray-600 dark:text-gray-400">ServiceNow, Salesforce, AWS, AI/ML</p>
                   </div>
                   
-                  <div className="bg-gray-50 dark:bg-skill-dark/50 rounded-lg p-4 text-center">
+                  <div className="bg-gray-50 dark:bg-thinkera-dark/50 rounded-lg p-4 text-center">
                     <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-3">
                       <Briefcase className="h-6 w-6" />
                     </div>
@@ -340,7 +339,7 @@ const SuccessStoriesPage = () => {
                     <p className="text-sm text-gray-600 dark:text-gray-400">IBM, Accenture, Infosys, TCS, Cognizant</p>
                   </div>
                   
-                  <div className="bg-gray-50 dark:bg-skill-dark/50 rounded-lg p-4 text-center">
+                  <div className="bg-gray-50 dark:bg-thinkera-dark/50 rounded-lg p-4 text-center">
                     <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-purple-100 text-purple-600 mb-3">
                       <Star className="h-6 w-6" />
                     </div>
@@ -362,7 +361,7 @@ const SuccessStoriesPage = () => {
                   </p>
                 </div>
                 <div className="flex space-x-4">
-                  <Button className="bg-white text-skill-purple hover:bg-gray-100">
+                  <Button className="bg-white text-thinkera-purple hover:bg-gray-100">
                     Explore Courses
                   </Button>
                   <Button variant="outline" className="border-white text-white hover:bg-white/10">

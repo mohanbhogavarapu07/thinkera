@@ -43,7 +43,7 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({
           <div className="mb-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/90">
-                SkillForge Blog
+                ThinkEra Blog
               </span>
             </h1>
           </div>

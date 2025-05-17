@@ -16,7 +16,7 @@ const Corporate = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Header Banner */}
-        <section className="py-20 bg-gradient-to-r from-skill-purple to-skill-blue text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-r from-thinkera-purple to-thinkera-blue text-white relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -33,12 +33,12 @@ const Corporate = () => {
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <Link to="#inquiry-form">
-                      <Button className="bg-white text-skill-purple hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
+                      <Button className="bg-white text-thinkera-purple hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                         Request a Consultation
                       </Button>
                     </Link>
                     <Link to="#programs">
-                      <Button className="bg-white text-skill-purple hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
+                      <Button className="bg-white text-thinkera-purple hover:bg-gray-100 px-8 py-3 text-base font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                         Explore Programs
                       </Button>
                     </Link>
@@ -77,7 +77,7 @@ const Corporate = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="h-full transition-all duration-200 hover:shadow-md border border-gray-100 rounded-xl overflow-hidden">
                 <CardContent className="p-6 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-lg bg-skill-purple/10 text-skill-purple flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-thinkera-purple/10 text-thinkera-purple flex items-center justify-center mb-4">
                     <TrendingUp size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Increased Productivity</h3>
@@ -89,7 +89,7 @@ const Corporate = () => {
               
               <Card className="h-full transition-all duration-200 hover:shadow-md border border-gray-100 rounded-xl overflow-hidden">
                 <CardContent className="p-6 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-thinkera-blue/10 text-thinkera-blue flex items-center justify-center mb-4">
                     <BarChart size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Cost Efficiency</h3>
@@ -101,7 +101,7 @@ const Corporate = () => {
               
               <Card className="h-full transition-all duration-200 hover:shadow-md border border-gray-100 rounded-xl overflow-hidden">
                 <CardContent className="p-6 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-thinkera-teal/10 text-thinkera-teal flex items-center justify-center mb-4">
                     <Users size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Talent Retention</h3>
@@ -118,7 +118,7 @@ const Corporate = () => {
         <section id="programs" className="py-16 bg-gray-50">
           <div className="container-section">
             <div className="text-center mb-12">
-              <div className="inline-block px-4 py-1.5 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm mb-4">
+              <div className="inline-block px-4 py-1.5 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm mb-4">
                 Customized Solutions
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -133,7 +133,7 @@ const Corporate = () => {
               <Card className="h-full card-hover">
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="inline-flex items-center px-3 py-1 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm">
+                    <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm">
                       Technology Upskilling
                     </div>
                   </div>
@@ -178,7 +178,7 @@ const Corporate = () => {
               <Card className="h-full card-hover">
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="inline-flex items-center px-3 py-1 bg-blue-500/10 rounded-full text-blue-500 font-medium text-sm">
+                    <div className="inline-flex items-center px-3 py-1 bg-thinkera-blue/10 rounded-full text-thinkera-blue font-medium text-sm">
                       Digital Transformation
                     </div>
                   </div>
@@ -223,7 +223,7 @@ const Corporate = () => {
               <Card className="h-full card-hover">
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="inline-flex items-center px-3 py-1 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm">
+                    <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm">
                       Innovation
                     </div>
                   </div>
@@ -235,19 +235,19 @@ const Corporate = () => {
                   
                   <div className="mb-6 space-y-2">
                     <div className="flex items-start">
-                      <CheckCircle size={20} className="text-skill-purple mt-1 mr-2 flex-shrink-0" />
+                      <CheckCircle size={20} className="text-thinkera-purple mt-1 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">Problem-definition workshops</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle size={20} className="text-skill-purple mt-1 mr-2 flex-shrink-0" />
+                      <CheckCircle size={20} className="text-thinkera-purple mt-1 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">Rapid prototyping and iterative development</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle size={20} className="text-skill-purple mt-1 mr-2 flex-shrink-0" />
+                      <CheckCircle size={20} className="text-thinkera-purple mt-1 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">Pitch practice and presentation skills</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle size={20} className="text-skill-purple mt-1 mr-2 flex-shrink-0" />
+                      <CheckCircle size={20} className="text-thinkera-purple mt-1 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">Implementation planning for winning solutions</span>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ const Corporate = () => {
               <Card className="h-full card-hover">
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className="flex justify-between items-start mb-4">
-                    <div className="inline-flex items-center px-3 py-1 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm">
+                    <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm">
                       Remote Learning
                     </div>
                   </div>
@@ -317,7 +317,7 @@ const Corporate = () => {
         <section className="py-16">
           <div className="container-section">
             <div className="text-center mb-12">
-              <div className="inline-block px-4 py-1.5 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm mb-4">
+              <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm mb-4">
                 Success Stories
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -330,10 +330,10 @@ const Corporate = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="h-full card-hover relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-skill-purple/10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-thinkera-purple/10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
                 <CardContent className="p-8 h-full flex flex-col relative z-10">
                   <div className="mb-6">
-                    <svg className="w-10 h-10 text-skill-purple/20" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-thinkera-purple/20" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
@@ -353,10 +353,10 @@ const Corporate = () => {
               </Card>
               
               <Card className="h-full card-hover relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-thinkera-blue/10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
                 <CardContent className="p-8 h-full flex flex-col relative z-10">
                   <div className="mb-6">
-                    <svg className="w-10 h-10 text-blue-500/20" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-10 h-10 text-thinkera-blue/20" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
@@ -384,7 +384,7 @@ const Corporate = () => {
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
-                  <div className="inline-block px-4 py-1.5 bg-skill-purple/10 rounded-full text-skill-purple font-medium text-sm mb-4">
+                  <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 rounded-full text-thinkera-purple font-medium text-sm mb-4">
                     Get Started
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -396,7 +396,7 @@ const Corporate = () => {
                   
                   <div className="space-y-6">
                     <div className="flex items-start">
-                      <Award size={20} className="text-skill-purple mt-1 mr-3 flex-shrink-0" />
+                      <Award size={20} className="text-thinkera-purple mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-900">Industry-Expert Instructors</h3>
                         <p className="text-gray-600">All our trainers have 10+ years of hands-on experience in their fields</p>
@@ -404,7 +404,7 @@ const Corporate = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <Users size={20} className="text-skill-purple mt-1 mr-3 flex-shrink-0" />
+                      <Users size={20} className="text-thinkera-purple mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-900">Scalable Programs</h3>
                         <p className="text-gray-600">From small teams to enterprise-wide initiatives with thousands of employees</p>
@@ -412,7 +412,7 @@ const Corporate = () => {
                     </div>
                     
                     <div className="flex items-start">
-                      <FileText size={20} className="text-skill-purple mt-1 mr-3 flex-shrink-0" />
+                      <FileText size={20} className="text-thinkera-purple mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold text-gray-900">Custom Materials</h3>
                         <p className="text-gray-600">Training materials tailored to your industry and specific use cases</p>
@@ -429,7 +429,7 @@ const Corporate = () => {
                         <input 
                           type="text" 
                           id="name" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           placeholder="John Doe"
                           required
                         />
@@ -440,7 +440,7 @@ const Corporate = () => {
                         <input 
                           type="email" 
                           id="email" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           placeholder="john@company.com"
                           required
                         />
@@ -451,7 +451,7 @@ const Corporate = () => {
                         <input 
                           type="text" 
                           id="company" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           placeholder="Acme Inc."
                           required
                         />
@@ -462,7 +462,7 @@ const Corporate = () => {
                         <input 
                           type="text" 
                           id="position" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           placeholder="HR Manager"
                           required
                         />
@@ -472,7 +472,7 @@ const Corporate = () => {
                         <label htmlFor="training" className="block text-gray-700 font-medium mb-2">Training Interest</label>
                         <select 
                           id="training" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           required
                         >
                           <option value="">Select training program</option>
@@ -490,7 +490,7 @@ const Corporate = () => {
                         <label htmlFor="team-size" className="block text-gray-700 font-medium mb-2">Team Size</label>
                         <select 
                           id="team-size" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           required
                         >
                           <option value="">Select team size</option>
@@ -507,12 +507,12 @@ const Corporate = () => {
                         <textarea 
                           id="message" 
                           rows={4} 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                           placeholder="Tell us about your specific training needs"
                         ></textarea>
                       </div>
                       
-                      <Button className="w-full bg-skill-purple hover:bg-skill-purple/90 text-white flex items-center justify-center py-6 text-base font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
+                      <Button className="w-full bg-thinkera-purple hover:bg-thinkera-purple/90 text-white flex items-center justify-center py-6 text-base font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
                         Submit Inquiry <Send size={16} className="ml-2" />
                       </Button>
                     </form>

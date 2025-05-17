@@ -59,7 +59,7 @@ const Contact = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Header Banner */}
-        <section className="py-24 bg-gradient-to-r from-skill-purple to-skill-blue relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-r from-thinkera-purple to-thinkera-blue relative overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container-section relative z-10 text-center px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Contact Us</h1>
@@ -186,7 +186,7 @@ const Contact = () => {
                               type="text" 
                               id="name" 
                               name="name" 
-                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                               placeholder="John Doe"
                               value={formData.name}
                               onChange={handleChange}
@@ -199,7 +199,7 @@ const Contact = () => {
                               type="email" 
                               id="email" 
                               name="email" 
-                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                               placeholder="john@example.com"
                               value={formData.email}
                               onChange={handleChange}
@@ -215,7 +215,7 @@ const Contact = () => {
                               type="tel" 
                               id="phone" 
                               name="phone" 
-                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                               placeholder="+91 98765 43210"
                               value={formData.phone}
                               onChange={handleChange}
@@ -226,7 +226,7 @@ const Contact = () => {
                             <select 
                               id="subject" 
                               name="subject" 
-                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                               value={formData.subject}
                               onChange={handleChange}
                               required
@@ -247,7 +247,7 @@ const Contact = () => {
                             id="message" 
                             name="message" 
                             rows={5} 
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skill-purple" 
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-thinkera-purple" 
                             placeholder="How can we help you?"
                             value={formData.message}
                             onChange={handleChange}
@@ -257,7 +257,7 @@ const Contact = () => {
                         
                         <Button 
                           type="submit" 
-                          className="bg-gradient-to-r from-skill-purple to-skill-blue hover:from-skill-purple/90 hover:to-skill-blue/90 text-white flex items-center"
+                          className="bg-gradient-to-r from-thinkera-purple to-thinkera-blue hover:from-thinkera-purple/90 hover:to-thinkera-blue/90 text-white flex items-center"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? 'Sending...' : (

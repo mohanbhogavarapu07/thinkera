@@ -1,15 +1,20 @@
-
 import React from "react";
-import { Calendar, Trophy, Users, ArrowRight, Code } from "lucide-react";
+import { Calendar, Trophy, Users, Clock, MapPin, Monitor, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface HackathonCardProps {
   title: string;
   date: string;
   participants: number;
-  prizes: string;
+  prizes: string[];
   status: "upcoming" | "live" | "ended";
-  companyLogo?: string;
+  location: string;
+  mode: string;
+  duration: string;
+  sponsors?: string[];
+  winners?: string[];
+  placements?: number;
 }
 
 const HackathonCard: React.FC<HackathonCardProps> = ({
@@ -18,50 +23,118 @@ const HackathonCard: React.FC<HackathonCardProps> = ({
   participants,
   prizes,
   status,
-  companyLogo,
+  location,
+  mode,
+  duration,
+  sponsors,
+  winners,
+  placements,
 }) => {
-  const statusClasses = {
-    upcoming: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
-    live: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
-    ended: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300",
-  };
-
   return (
-    <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-6 card-hover">
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="font-semibold text-lg">{title}</h3>
-        <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusClasses[status]}`}>
-          {status.charAt(0).toUpperCase() + status.slice(1)}
-        </span>
-      </div>
-      
-      <div className="space-y-3 mb-4">
-        <div className="flex items-center text-gray-600 dark:text-gray-300">
-          <Calendar className="h-4 w-4 mr-2 text-skill-purple" />
-          <span>{date}</span>
+    <Card className="h-full hover:shadow-lg transition-shadow">
+      <CardContent className="p-6 h-full flex flex-col">
+        <div className="flex justify-between items-start mb-4">
+          <div className="inline-flex items-center px-3 py-1 bg-thinkera-purple/10 dark:bg-thinkera-purple/20 rounded-full text-thinkera-purple dark:text-thinkera-purple-light font-medium text-sm">
+            <Calendar size={16} className="mr-2" />
+            {date}
+          </div>
+          <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+            status === 'live' 
+              ? 'bg-thinkera-blue/10 text-thinkera-blue dark:bg-thinkera-blue/20 dark:text-thinkera-blue-light' 
+              : status === 'upcoming'
+              ? 'bg-thinkera-purple/10 text-thinkera-purple dark:bg-thinkera-purple/20 dark:text-thinkera-purple-light'
+              : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
+          }`}>
+            {status.charAt(0).toUpperCase() + status.slice(1)}
+          </div>
         </div>
-        <div className="flex items-center text-gray-600 dark:text-gray-300">
-          <Users className="h-4 w-4 mr-2 text-skill-purple" />
-          <span>{participants} Participants</span>
+        
+        <h3 className="text-2xl font-semibold text-thinkera-dark dark:text-white mb-3">{title}</h3>
+        
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="flex items-center">
+            <MapPin size={16} className="text-thinkera-purple dark:text-thinkera-purple-light mr-2" />
+            <span className="text-gray-700 dark:text-gray-300">{location}</span>
+          </div>
+          <div className="flex items-center">
+            <Monitor size={16} className="text-thinkera-purple dark:text-thinkera-purple-light mr-2" />
+            <span className="text-gray-700 dark:text-gray-300">{mode}</span>
+          </div>
+          <div className="flex items-center">
+            <Clock size={16} className="text-thinkera-purple dark:text-thinkera-purple-light mr-2" />
+            <span className="text-gray-700 dark:text-gray-300">{duration}</span>
+          </div>
+          <div className="flex items-center">
+            <Users size={16} className="text-thinkera-purple dark:text-thinkera-purple-light mr-2" />
+            <span className="text-gray-700 dark:text-gray-300">{participants}+ Participants</span>
+          </div>
         </div>
-        <div className="flex items-center text-gray-600 dark:text-gray-300">
-          <Trophy className="h-4 w-4 mr-2 text-skill-purple" />
-          <span>{prizes}</span>
+        
+        {winners && (
+          <div className="mb-6">
+            <h4 className="font-semibold text-thinkera-dark dark:text-white mb-2">Winners:</h4>
+            <ol className="space-y-1">
+              {winners.map((winner, index) => (
+                <li key={index} className="flex items-start">
+                  <span className={`mr-2 ${
+                    index === 0 ? 'text-thinkera-blue dark:text-thinkera-blue-light' : 
+                    index === 1 ? 'text-thinkera-purple dark:text-thinkera-purple-light' : 
+                    'text-thinkera-purple-dark dark:text-thinkera-purple'
+                  }`}>
+                    {index + 1}.
+                  </span>
+                  <span className="text-gray-700 dark:text-gray-300">{winner}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        
+        <div className="mb-6">
+          <h4 className="font-semibold text-thinkera-dark dark:text-white mb-2">Prizes</h4>
+          <div className="flex space-x-4">
+            {prizes.map((prize, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <Trophy size={16} className={`${
+                  index === 0 ? 'text-thinkera-blue dark:text-thinkera-blue-light' : 
+                  index === 1 ? 'text-thinkera-purple dark:text-thinkera-purple-light' : 
+                  'text-thinkera-purple-dark dark:text-thinkera-purple'
+                } mb-1`} />
+                <span className="text-thinkera-dark dark:text-white font-semibold">{prize}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      
-      {companyLogo && (
-        <div className="flex items-center mb-4">
-          <span className="text-xs text-gray-500 dark:text-gray-400 mr-2">Sponsored by:</span>
-          <img src={companyLogo} alt="Company logo" className="h-6" />
+        
+        {sponsors && (
+          <div className="mb-6">
+            <h4 className="font-semibold text-thinkera-dark dark:text-white mb-2">Sponsored by</h4>
+            <div className="flex space-x-4">
+              {sponsors.map((sponsor, index) => (
+                <span key={index} className="text-gray-600 dark:text-gray-300">{sponsor}</span>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {placements && (
+          <div className="mb-6">
+            <h4 className="font-semibold text-thinkera-dark dark:text-white mb-2">Placements</h4>
+            <div className="flex items-center">
+              <Users size={16} className="text-thinkera-purple dark:text-thinkera-purple-light mr-2" />
+              <span className="text-gray-700 dark:text-gray-300">{placements} students placed</span>
+            </div>
+          </div>
+        )}
+        
+        <div className="mt-auto">
+          <Button className="w-full bg-gradient-to-r from-thinkera-purple to-thinkera-blue hover:from-thinkera-purple-dark hover:to-thinkera-blue-dark text-white">
+            {status === 'live' ? 'Join Now' : status === 'upcoming' ? 'Register' : 'View Results'}
+            <ChevronRight size={16} className="ml-1" />
+          </Button>
         </div>
-      )}
-      
-      <Button className="w-full bg-skill-purple hover:bg-skill-purple-dark text-white">
-        {status === "live" ? "Join Now" : status === "upcoming" ? "Register" : "View Results"}
-        <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -85,27 +158,55 @@ const HackathonSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <HackathonCard
-            title="AI Innovation Challenge"
-            date="May 15 - June 2, 2025"
-            participants={250}
-            prizes="$5,000 + Internship Opportunities"
-            status="upcoming"
-            companyLogo="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=32&q=80"
-          />
-          <HackathonCard
-            title="ServiceNow Solutions Hackathon"
-            date="April 20 - May 5, 2025"
-            participants={180}
-            prizes="$3,000 + Placement Interviews"
-            status="live"
-          />
-          <HackathonCard
-            title="Web3 Development Contest"
-            date="March 1 - March 15, 2025"
-            participants={320}
-            prizes="$4,500 + Mentorship Program"
+            title="ServiceNow Innovation Challenge"
+            date="January 10-12, 2025"
+            participants={500}
+            prizes={["₹1,00,000", "₹50,000", "₹25,000"]}
             status="ended"
-            companyLogo="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=32&q=80"
+            location="Online"
+            mode="Virtual"
+            duration="48 Hours"
+            sponsors={["Drehill"]}
+            winners={[
+              "Team TechStar (IIT Delhi)",
+              "NowNinjas (BITS Pilani)",
+              "ServiceMasters (VIT)"
+            ]}
+            placements={15}
+          />
+          <HackathonCard
+            title="ServiceNow App Builder Contest"
+            date="November 5-7, 2024"
+            participants={450}
+            prizes={["₹75,000", "₹35,000", "₹15,000"]}
+            status="ended"
+            location="Hybrid"
+            mode="Online + On-site"
+            duration="72 Hours"
+            sponsors={["Drehill"]}
+            winners={[
+              "CloudForce (IIT Bombay)",
+              "SalesGurus (NIT Trichy)",
+              "ForceField (IIIT Hyderabad)"
+            ]}
+            placements={12}
+          />
+          <HackathonCard
+            title="ServiceNow Automation Challenge"
+            date="September 15-17, 2024"
+            participants={350}
+            prizes={["₹90,000", "₹45,000", "₹20,000"]}
+            status="ended"
+            location="Online"
+            mode="Virtual"
+            duration="48 Hours"
+            sponsors={["Drehill"]}
+            winners={[
+              "Pipeline Pros (DTU)",
+              "ContainerKings (IIT Kanpur)",
+              "GitMasters (COEP)"
+            ]}
+            placements={8}
           />
         </div>
         

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,18 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for SkillForge
-				'skill-purple': {
+				// Custom colors for ThinkEra
+				'thinkera-purple': {
 					light: '#9b87f5',
 					DEFAULT: '#7E69AB',
 					dark: '#6E59A5'
 				},
-				'skill-blue': {
+				'thinkera-blue': {
 					light: '#33C3F0',
 					DEFAULT: '#1EAEDB',
 					dark: '#0FA0CE'
 				},
-				'skill-dark': '#1A1F2C'
+				'thinkera-dark': '#1A1F2C'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

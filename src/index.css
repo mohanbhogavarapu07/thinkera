@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -85,7 +84,7 @@
 
 @layer components {
   .hero-gradient-text {
-    @apply bg-gradient-to-r from-skill-purple to-skill-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-thinkera-purple to-thinkera-blue bg-clip-text text-transparent;
   }
   
   .animate-delay-100 {
@@ -114,11 +113,11 @@
   }
   
   .button-outline {
-    @apply bg-transparent border-2 border-skill-purple text-skill-purple font-medium 
-           py-3 px-6 rounded-lg transition-all hover:bg-skill-purple/10;
+    @apply bg-transparent border-2 border-thinkera-purple text-thinkera-purple font-medium 
+           py-3 px-6 rounded-lg transition-all hover:bg-thinkera-purple/10;
   }
 }
 
 .glass-card {
-  @apply bg-white/70 dark:bg-skill-dark/70 backdrop-blur-md;
+  @apply bg-white/70 dark:bg-thinkera-dark/70 backdrop-blur-md;
 }

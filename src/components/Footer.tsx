@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react';
@@ -12,10 +11,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="h-12 w-12 bg-gradient-to-r from-purple-600 to-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SF</span>
+                <span className="text-white font-bold text-xl">TE</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-teal-400 bg-clip-text text-transparent">
-                SkillForge
+                ThinkEra
               </span>
             </div>
             <p className="text-gray-400">
@@ -88,7 +87,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MailIcon size={20} className="text-brand-purple flex-shrink-0" />
-                <a href="mailto:info@skillforge.edu" className="text-gray-400 hover:text-white transition-colors">info@skillForge.edu</a>
+                <a href="mailto:info@thinkera.edu" className="text-gray-400 hover:text-white transition-colors">info@thinkera.edu</a>
               </li>
             </ul>
           </div>
@@ -114,7 +113,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} SkillForge. All rights reserved.
+              © {new Date().getFullYear()} ThinkEra. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</Link>

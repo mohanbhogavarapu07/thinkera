@@ -10,53 +10,9 @@ import {
   Clock, Award, ChevronRight, BookOpen
 } from 'lucide-react';
 
-const allCourses = [
+export const allCourses = [
   {
     id: 1,
-    title: 'ServiceNow Development',
-    description: 'Master the ServiceNow platform and become a certified developer. Learn to create applications, workflows, and integrations.',
-    icon: Server,
-    category: 'Platform',
-    level: 'Intermediate',
-    duration: '12 weeks',
-    certification: true,
-    color: 'from-purple-500 to-indigo-600',
-  },
-  {
-    id: 2,
-    title: 'Salesforce Administration',
-    description: 'Learn to manage and customize Salesforce for enterprise needs. Master user management, security, and custom objects.',
-    icon: Database,
-    category: 'Platform',
-    level: 'Beginner',
-    duration: '8 weeks',
-    certification: true,
-    color: 'from-blue-500 to-cyan-600',
-  },
-  {
-    id: 3,
-    title: 'AWS Cloud Architecture',
-    description: 'Design and implement scalable systems using AWS services. Master EC2, S3, Lambda, and more.',
-    icon: Cloud,
-    category: 'Cloud',
-    level: 'Advanced',
-    duration: '16 weeks',
-    certification: true,
-    color: 'from-orange-500 to-yellow-600',
-  },
-  {
-    id: 4,
-    title: 'DevOps Engineering',
-    description: 'Master CI/CD pipelines, containers, and infrastructure as code. Learn Docker, Kubernetes, and Jenkins.',
-    icon: Code,
-    category: 'Engineering',
-    level: 'Advanced',
-    duration: '14 weeks',
-    certification: true,
-    color: 'from-green-500 to-emerald-600',
-  },
-  {
-    id: 5,
     title: 'AI & Machine Learning',
     description: 'Build intelligent applications with modern AI frameworks. Master TensorFlow, PyTorch, and data science fundamentals.',
     icon: Brain,
@@ -67,40 +23,7 @@ const allCourses = [
     color: 'from-red-500 to-pink-600',
   },
   {
-    id: 6,
-    title: 'Corporate Innovation',
-    description: 'Customized training programs for enterprises and teams. Focus on specific technologies and business outcomes.',
-    icon: Users,
-    category: 'Business',
-    level: 'All Levels',
-    duration: 'Custom',
-    certification: false,
-    color: 'from-brand-purple to-brand-teal',
-  },
-  {
-    id: 7,
-    title: 'Salesforce Development',
-    description: 'Learn Apex, Visualforce, and Lightning Web Components to build custom Salesforce applications.',
-    icon: Code,
-    category: 'Platform',
-    level: 'Intermediate',
-    duration: '10 weeks',
-    certification: true,
-    color: 'from-blue-500 to-cyan-600',
-  },
-  {
-    id: 8,
-    title: 'Microsoft Azure Fundamentals',
-    description: 'Get started with Azure cloud services and learn core concepts of cloud computing.',
-    icon: Cloud,
-    category: 'Cloud',
-    level: 'Beginner',
-    duration: '6 weeks',
-    certification: true,
-    color: 'from-blue-600 to-indigo-700',
-  },
-  {
-    id: 9,
+    id: 2,
     title: 'Python for Data Science',
     description: 'Learn Python programming specifically for data analysis, visualization, and machine learning.',
     icon: Brain,
@@ -109,6 +32,50 @@ const allCourses = [
     duration: '8 weeks',
     certification: true,
     color: 'from-yellow-500 to-yellow-600',
+  },
+  {
+    id: 3,
+    title: 'Deep Learning & Neural Networks',
+    description: 'Master deep learning concepts, neural network architectures, and advanced AI model development.',
+    icon: Brain,
+    category: 'AI',
+    level: 'Advanced',
+    duration: '12 weeks',
+    certification: true,
+    color: 'from-purple-500 to-indigo-600',
+  },
+  {
+    id: 4,
+    title: 'Natural Language Processing',
+    description: 'Learn to build AI systems that understand and process human language using modern NLP techniques.',
+    icon: Brain,
+    category: 'AI',
+    level: 'Intermediate',
+    duration: '10 weeks',
+    certification: true,
+    color: 'from-blue-500 to-cyan-600',
+  },
+  {
+    id: 5,
+    title: 'Computer Vision & Image Processing',
+    description: 'Develop AI systems that can analyze and understand visual data using computer vision techniques.',
+    icon: Brain,
+    category: 'AI',
+    level: 'Advanced',
+    duration: '14 weeks',
+    certification: true,
+    color: 'from-green-500 to-emerald-600',
+  },
+  {
+    id: 6,
+    title: 'AI Ethics & Responsible AI',
+    description: 'Learn about ethical considerations, bias mitigation, and responsible development of AI systems.',
+    icon: Brain,
+    category: 'AI',
+    level: 'Intermediate',
+    duration: '6 weeks',
+    certification: true,
+    color: 'from-orange-500 to-yellow-600',
   }
 ];
 
@@ -134,7 +101,7 @@ const Courses = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Header Banner */}
-        <section className="py-16 bg-gradient-to-r from-skill-purple/90 to-blue-600/90 relative overflow-hidden">
+        <section className="py-16 bg-gradient-to-r from-thinkera-purple to-thinkera-blue relative overflow-hidden">
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Courses</h1>
