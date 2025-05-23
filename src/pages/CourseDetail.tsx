@@ -7,241 +7,130 @@ import { Card, CardContent } from '@/components/ui/card';
 import {
   Clock, Award, Users, BookOpen, CheckCircle,
   Calendar, ArrowLeft, GraduationCap, FileText, ArrowRight,
-  Server, Database, Cloud, Code, Brain
+  Server, Database, Cloud, Code, Brain, MessageSquare, Sparkles
 } from 'lucide-react';
 
 const courseDataExtended = [
   {
     id: 1,
-    title: 'AI & Machine Learning',
-    description: 'Build intelligent applications with modern AI frameworks.',
-    longDescription: 'This course provides a comprehensive introduction to artificial intelligence and machine learning concepts, algorithms, and applications. You\'ll learn to build predictive models, natural language processing systems, and computer vision applications using industry-standard frameworks like TensorFlow and PyTorch.',
-    icon: 'Brain',
-    category: 'AI',
+    title: 'ServiceNow Administration Certification Course',
+    description: 'Master ServiceNow platform administration and prepare for the CSA exam.',
+    longDescription: 'This course provides comprehensive training on ServiceNow administration, equipping you with the skills to manage, configure, and maintain the ServiceNow platform effectively. You\'ll learn to automate workflows, manage users and data, and ensure the platform aligns with business needs. This course prepares you for the ServiceNow Certified System Administrator (CSA) exam.',
+    icon: 'Server',
+    category: 'ServiceNow',
     level: 'Intermediate',
-    duration: '16 weeks',
+    duration: '12 weeks',
     certification: true,
-    price: '$1,899',
-    instructor: 'Dr. Priya Sharma',
-    startDates: ['June 25, 2025', 'September 20, 2025'],
-    color: 'from-red-500 to-pink-600',
+    price: '$1,499',
+    instructor: 'Mr. Alex Chen',
+    startDates: ['July 15, 2025', 'October 10, 2025'],
+    color: 'from-indigo-500 to-purple-600',
     modules: [
-      'Foundations of Machine Learning',
-      'Supervised Learning Algorithms',
-      'Unsupervised Learning and Clustering',
-      'Deep Learning Fundamentals',
-      'Natural Language Processing',
-      'Computer Vision',
-      'Reinforcement Learning',
-      'AI Ethics and Responsible AI'
+      'ServiceNow Platform Overview & Navigation',
+      'User Administration & Security',
+      'Data Management in ServiceNow',
+      'ServiceNow UI & Customization',
+      'Workflow Automation & Flow Designer',
+      'Service Catalog Administration',
+      'ITSM Applications Overview',
+      'Reporting, Dashboards & Performance Analytics Basics',
+      'Instance Management & Best Practices',
+      'Scripting in ServiceNow (Introduction)'
     ],
     skills: [
-      'Data Preprocessing',
-      'Model Training and Evaluation',
-      'Neural Network Design',
-      'TensorFlow and PyTorch',
-      'Model Deployment',
-      'MLOps Fundamentals'
+      'ServiceNow Platform Navigation',
+      'User and Group Management',
+      'Data Import and Management',
+      'UI Configuration and Customization',
+      'Workflow Design and Implementation',
+      'Service Catalog Management',
+      'Incident Management Basics',
+      'Report and Dashboard Creation',
+      'Instance Security and Performance Monitoring',
+      'Preparation for ServiceNow CSA Exam'
     ],
     prerequisites: [
-      'Programming experience in Python',
-      'Understanding of statistics and probability',
-      'Basic linear algebra knowledge',
-      'Data analysis experience'
+      'Basic understanding of ITIL concepts',
+      'Familiarity with database concepts',
+      'General IT experience (1-2 years recommended)',
+      'Strong problem-solving skills'
     ]
   },
   {
     id: 2,
-    title: 'Python for Data Science',
-    description: 'Learn Python programming specifically for data analysis, visualization, and machine learning.',
-    longDescription: 'Master Python programming for data science and machine learning applications. This course covers essential libraries like NumPy, Pandas, Matplotlib, and Scikit-learn, along with practical projects in data analysis and visualization.',
-    icon: 'Brain',
-    category: 'AI',
-    level: 'Beginner',
+    title: 'Prompt Engineering & LLM Interfacing',
+    description: 'Master the art of prompt engineering for Large Language Models.',
+    longDescription: 'This course offers a deep dive into the art and science of prompt engineering for Large Language Models (LLMs). You\'ll learn how to craft effective prompts to guide AI models, optimize their responses for various tasks, and understand the nuances of interacting with state-of-the-art generative AI. This course will empower you to unlock the full potential of LLMs for creative and analytical applications.',
+    icon: 'MessageSquare',
+    category: 'Generative AI',
+    level: 'Intermediate',
     duration: '8 weeks',
     certification: true,
     price: '$999',
-    instructor: 'Dr. Michael Chen',
-    startDates: ['July 10, 2025', 'October 5, 2025'],
-    color: 'from-yellow-500 to-yellow-600',
+    instructor: 'Ms. Sarah Chen',
+    startDates: ['August 5, 2025', 'November 12, 2025'],
+    color: 'from-blue-500 to-cyan-600',
     modules: [
-      'Python Programming Fundamentals',
-      'Data Structures and Algorithms',
-      'NumPy and Pandas for Data Manipulation',
-      'Data Visualization with Matplotlib and Seaborn',
-      'Statistical Analysis with Python',
-      'Introduction to Machine Learning with Scikit-learn',
-      'Data Cleaning and Preprocessing',
-      'Real-world Data Science Projects'
+      'Introduction to LLMs and Generative AI',
+      'Fundamentals of Prompt Engineering',
+      'Core Prompting Techniques',
+      'Advanced Prompting Strategies',
+      'Prompting for Creative Text Generation & Content Creation',
+      'Prompting for Analytical Tasks',
+      'Iterative Prompt Development & Evaluation Metrics',
+      'Ethical AI: Responsible Prompting & Mitigating Bias',
+      'Tools, APIs, and Platforms for Prompt Engineers',
+      'Future of Prompt Engineering & LLM Interaction'
     ],
     skills: [
-      'Python Programming',
-      'Data Analysis',
-      'Data Visualization',
-      'Statistical Analysis',
-      'Machine Learning Basics',
-      'Data Preprocessing'
+      'Effective Prompt Design & Crafting',
+      'Multi-faceted Prompting Techniques',
+      'LLM Response Evaluation',
+      'Iterative Prompt Optimization',
+      'Application-Specific Prompting',
+      'Ethical LLM Interaction',
+      'API Usage for LLMs (Basic)',
+      'Creative Problem Solving with AI'
     ],
     prerequisites: [
-      'Basic programming concepts',
-      'High school level mathematics',
-      'No prior Python experience required'
+      'Basic understanding of Artificial Intelligence concepts',
+      'Strong written English and communication skills',
+      'Familiarity with using web-based applications and APIs (beneficial, not mandatory)',
+      'An analytical and creative mindset'
     ]
   },
   {
     id: 3,
-    title: 'Deep Learning & Neural Networks',
-    description: 'Master deep learning concepts, neural network architectures, and advanced AI model development.',
-    longDescription: 'Dive deep into neural networks and advanced deep learning techniques. Learn to build and train complex neural network architectures, implement state-of-the-art models, and deploy them in production environments.',
-    icon: 'Brain',
-    category: 'AI',
-    level: 'Advanced',
-    duration: '12 weeks',
+    title: 'AI Adventure: Mastering Prompts!',
+    description: 'A 1-Day Workshop for 12th Graders to explore the world of AI and prompt engineering.',
+    longDescription: 'Ever wondered how to talk to AI and get amazing results? This one-day "AI Adventure" is your chance to dive into the exciting world of Prompt Engineering! Learn how to craft cool instructions (prompts) for Large Language Models (LLMs) – the brains behind tools like ChatGPT. Discover how this new skill can help you with your studies, unleash your creativity, and prepare you for a future powered by AI. No coding or prior tech genius needed – just bring your curiosity!',
+    icon: 'Sparkles',
+    category: 'Future Tech Explorers',
+    level: 'Beginner',
+    duration: '1 Day',
     certification: true,
-    price: '$1,799',
-    instructor: 'Dr. Sarah Johnson',
-    startDates: ['August 1, 2025', 'November 5, 2025'],
-    color: 'from-purple-500 to-indigo-600',
+    price: '₹999',
+    instructor: 'Ms. Diya Sharma',
+    startDates: ['July 12, 2025'],
+    color: 'from-pink-500 to-rose-600',
     modules: [
-      'Neural Network Fundamentals',
-      'Convolutional Neural Networks (CNNs)',
-      'Recurrent Neural Networks (RNNs)',
-      'Transformer Architecture',
-      'Generative Adversarial Networks (GANs)',
-      'Transfer Learning and Fine-tuning',
-      'Model Optimization and Deployment',
-      'Advanced Research Topics'
+      'Welcome to the World of AI!',
+      'The Magic of Prompts',
+      'AI for Creativity & School',
+      'Explore Cool AI Tools & Be a Smart User'
     ],
     skills: [
-      'Deep Learning Architecture Design',
-      'CNN and RNN Implementation',
-      'Transformer Models',
-      'GAN Development',
-      'Model Optimization',
-      'Production Deployment'
+      'Basic understanding of AI and LLMs',
+      'How to write simple and effective prompts',
+      'Experience using AI for creative and learning tasks',
+      'Awareness of ethical AI use',
+      'A glimpse into how AI will impact your future'
     ],
     prerequisites: [
-      'Strong Python programming skills',
-      'Understanding of machine learning fundamentals',
-      'Experience with PyTorch or TensorFlow',
-      'Basic calculus and linear algebra'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Natural Language Processing',
-    description: 'Learn to build AI systems that understand and process human language using modern NLP techniques.',
-    longDescription: 'Explore the fascinating world of Natural Language Processing (NLP) and learn to build systems that can understand, interpret, and generate human language. Master modern NLP techniques and transformer-based models.',
-    icon: 'Brain',
-    category: 'AI',
-    level: 'Intermediate',
-    duration: '10 weeks',
-    certification: true,
-    price: '$1,499',
-    instructor: 'Dr. Alex Wong',
-    startDates: ['July 15, 2025', 'October 10, 2025'],
-    color: 'from-blue-500 to-cyan-600',
-    modules: [
-      'NLP Fundamentals and Text Processing',
-      'Word Embeddings and Vector Representations',
-      'Sequence Models and RNNs for NLP',
-      'Transformer Architecture and BERT',
-      'Text Classification and Sentiment Analysis',
-      'Named Entity Recognition',
-      'Text Generation and Summarization',
-      'NLP Applications and Projects'
-    ],
-    skills: [
-      'Text Processing',
-      'Word Embeddings',
-      'Transformer Models',
-      'Text Classification',
-      'Named Entity Recognition',
-      'Text Generation'
-    ],
-    prerequisites: [
-      'Python programming experience',
-      'Basic machine learning knowledge',
-      'Understanding of deep learning concepts',
-      'Familiarity with PyTorch or TensorFlow'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Computer Vision & Image Processing',
-    description: 'Develop AI systems that can analyze and understand visual data using computer vision techniques.',
-    longDescription: 'Learn to build AI systems that can see and understand visual data. This course covers computer vision fundamentals, image processing techniques, and deep learning approaches for visual recognition tasks.',
-    icon: 'Brain',
-    category: 'AI',
-    level: 'Advanced',
-    duration: '14 weeks',
-    certification: true,
-    price: '$1,699',
-    instructor: 'Dr. Maria Rodriguez',
-    startDates: ['August 15, 2025', 'November 10, 2025'],
-    color: 'from-green-500 to-emerald-600',
-    modules: [
-      'Computer Vision Fundamentals',
-      'Image Processing Techniques',
-      'Feature Detection and Matching',
-      'Convolutional Neural Networks',
-      'Object Detection and Recognition',
-      'Image Segmentation',
-      'Video Analysis',
-      'Real-time Computer Vision Applications'
-    ],
-    skills: [
-      'Image Processing',
-      'Feature Detection',
-      'CNN Implementation',
-      'Object Detection',
-      'Image Segmentation',
-      'Video Analysis'
-    ],
-    prerequisites: [
-      'Python programming experience',
-      'Understanding of deep learning',
-      'Basic linear algebra',
-      'Familiarity with PyTorch or TensorFlow'
-    ]
-  },
-  {
-    id: 6,
-    title: 'AI Ethics & Responsible AI',
-    description: 'Learn about ethical considerations, bias mitigation, and responsible development of AI systems.',
-    longDescription: 'Explore the ethical implications of AI and learn to develop responsible AI systems. This course covers bias detection and mitigation, fairness in AI, transparency, and ethical decision-making in AI development.',
-    icon: 'Brain',
-    category: 'AI',
-    level: 'Intermediate',
-    duration: '6 weeks',
-    certification: true,
-    price: '$899',
-    instructor: 'Dr. James Wilson',
-    startDates: ['September 1, 2025', 'December 1, 2025'],
-    color: 'from-orange-500 to-yellow-600',
-    modules: [
-      'AI Ethics Fundamentals',
-      'Bias Detection and Mitigation',
-      'Fairness in Machine Learning',
-      'Transparency and Explainability',
-      'Privacy and Security in AI',
-      'Ethical Decision Making',
-      'AI Governance and Policy',
-      'Responsible AI Development'
-    ],
-    skills: [
-      'Bias Detection',
-      'Fairness Assessment',
-      'Model Explainability',
-      'Privacy Protection',
-      'Ethical Decision Making',
-      'AI Governance'
-    ],
-    prerequisites: [
-      'Basic understanding of AI/ML concepts',
-      'No technical prerequisites required',
-      'Interest in ethical considerations',
-      'Critical thinking skills'
+      'All 12th-grade students (Science, Commerce, Arts/Humanities, and other streams)',
+      'Curious minds eager to learn about the latest technology',
+      'Anyone who wants to understand how to use AI effectively and safely',
+      'No prior computer programming or AI knowledge is needed'
     ]
   }
 ];
@@ -283,6 +172,8 @@ const CourseDetail = () => {
     case 'Code': IconComponent = <Code size={32} />; break;
     case 'Brain': IconComponent = <Brain size={32} />; break;
     case 'Users': IconComponent = <Users size={32} />; break;
+    case 'MessageSquare': IconComponent = <MessageSquare size={32} />; break;
+    case 'Sparkles': IconComponent = <Sparkles size={32} />; break;
     default: IconComponent = <BookOpen size={32} />;
   }
 
@@ -478,6 +369,8 @@ const CourseDetail = () => {
                         {relatedCourse.icon === 'Code' && <Code size={24} />}
                         {relatedCourse.icon === 'Brain' && <Brain size={24} />}
                         {relatedCourse.icon === 'Users' && <Users size={24} />}
+                        {relatedCourse.icon === 'MessageSquare' && <MessageSquare size={24} />}
+                        {relatedCourse.icon === 'Sparkles' && <Sparkles size={24} />}
                       </div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="bg-brand-purple bg-opacity-10 text-brand-purple text-xs font-medium px-2.5 py-0.5 rounded">

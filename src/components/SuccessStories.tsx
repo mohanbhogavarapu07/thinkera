@@ -1,15 +1,18 @@
-
 import React from "react";
 import { Quote } from "lucide-react";
 
 interface TestimonialProps {
   name: string;
   role: string;
-  company: string;
+  company?: string;
   image: string;
   quote: string;
   companyLogo?: string;
   placement?: string;
+  detailedStory?: string;
+  previousRole?: string;
+  salaryStat?: string;
+  category?: string;
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
@@ -20,6 +23,10 @@ const Testimonial: React.FC<TestimonialProps> = ({
   quote,
   companyLogo,
   placement,
+  detailedStory,
+  previousRole,
+  salaryStat,
+  category
 }) => {
   return (
     <div className="bg-white dark:bg-skill-dark/90 rounded-xl shadow-md p-6 card-hover">
@@ -29,6 +36,9 @@ const Testimonial: React.FC<TestimonialProps> = ({
             src={image} 
             alt={name} 
             className="w-14 h-14 rounded-full object-cover border-2 border-skill-purple/30" 
+            onError={(e) => {
+              e.currentTarget.src = "https://via.placeholder.com/56?text=" + name.charAt(0);
+            }}
           />
           <Quote className="absolute -bottom-2 -right-2 h-6 w-6 bg-skill-purple text-white p-1 rounded-full" />
         </div>
@@ -49,9 +59,29 @@ const Testimonial: React.FC<TestimonialProps> = ({
         "{quote}"
       </blockquote>
       
+      {detailedStory && (
+        <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          {detailedStory}
+        </div>
+      )}
+      
+      {previousRole && salaryStat && (
+        <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          <p>Previous Role: {previousRole}</p>
+          <p className="text-skill-purple">{salaryStat}</p>
+        </div>
+      )}
+      
       {companyLogo && (
         <div className="flex justify-end">
-          <img src={companyLogo} alt={`${company} logo`} className="h-6" />
+          <img 
+            src={companyLogo} 
+            alt={`${company} logo`} 
+            className="h-6"
+            onError={(e) => {
+              e.currentTarget.src = "https://via.placeholder.com/64x24?text=" + company;
+            }}
+          />
         </div>
       )}
     </div>
@@ -79,7 +109,6 @@ const SuccessStories = () => {
             image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80"
             quote="The ServiceNow certification course gave me the exact skills employers were looking for. I received three job offers within two weeks of completing the program!"
             placement="Placed with 92% salary increase"
-            companyLogo="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80"
           />
           <Testimonial
             name="Michael Chen"
@@ -88,7 +117,6 @@ const SuccessStories = () => {
             image="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80"
             quote="The AI/ML bootcamp and hackathon experience were game-changers. The practical projects became my portfolio, which impressed my current employer."
             placement="Winner of 2023 AI Innovation Hackathon"
-            companyLogo="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80"
           />
           <Testimonial
             name="Priya Sharma"
@@ -97,7 +125,6 @@ const SuccessStories = () => {
             image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80"
             quote="The mentorship program was invaluable. My mentor helped me navigate the certification process and connected me directly with hiring managers."
             placement="Secured role within 30 days of certification"
-            companyLogo="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80"
           />
         </div>
         
@@ -108,7 +135,7 @@ const SuccessStories = () => {
               <p className="text-gray-600 dark:text-gray-400">Real-time metrics from our placement cell</p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-4xl font-bold text-skill-purple mb-2">98%</div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">Placement Rate</p>

@@ -11,7 +11,6 @@ interface TestimonialProps {
   company: string;
   image: string;
   quote: string;
-  companyLogo?: string;
   placement?: string;
   detailedStory?: string;
   previousRole?: string;
@@ -24,7 +23,6 @@ const Testimonial: React.FC<TestimonialProps> = ({
   company,
   image,
   quote,
-  companyLogo,
   placement,
   detailedStory,
   previousRole,
@@ -75,12 +73,6 @@ const Testimonial: React.FC<TestimonialProps> = ({
           {salaryStat}
         </div>
       )}
-      
-      {companyLogo && (
-        <div className="flex justify-end">
-          <img src={companyLogo} alt={`${company} logo`} className="h-6" />
-        </div>
-      )}
     </div>
   );
 };
@@ -94,7 +86,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The ServiceNow certification course gave me the exact skills employers were looking for. I received three job offers within two weeks of completing the program!",
     placement: "Placed with 92% salary increase",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "After 5 years in IT support, I was looking for a career change that would leverage my technical background. The ServiceNow course provided hands-on training that prepared me perfectly for my technical interviews.",
     previousRole: "IT Support Specialist",
     salaryStat: "Salary increased from ₹6L to ₹11.5L per annum",
@@ -108,7 +99,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The AI/ML bootcamp and hackathon experience were game-changers. The practical projects became my portfolio, which impressed my current employer.",
     placement: "Winner of 2023 AI Innovation Hackathon",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "With a background in statistics but no formal programming experience, I needed to build practical skills. The bootcamp's project-based approach helped me create real-world applications that showcased my abilities.",
     previousRole: "Data Analyst",
     salaryStat: "Secured a 115% increase in compensation package",
@@ -122,7 +112,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The mentorship program was invaluable. My mentor helped me navigate the certification process and connected me directly with hiring managers.",
     placement: "Secured role within 30 days of certification",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "As a fresh graduate with just an internship experience, breaking into Salesforce seemed daunting. The structured learning path and mentor support gave me the confidence and connections I needed.",
     previousRole: "Marketing Intern",
     salaryStat: "First job with ₹8.5L package (above industry average)",
@@ -136,7 +125,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The AWS certification program provided deep technical knowledge and practical implementation experience that immediately translated to on-the-job success.",
     placement: "Hired directly through campus placement",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "I had traditional IT infrastructure experience but needed to transition to cloud. The AWS program bridged that gap with hands-on labs and real-world scenarios.",
     previousRole: "System Administrator",
     salaryStat: "Role upgrade with 78% salary increase",
@@ -150,7 +138,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The intensive full-stack bootcamp transformed me from a backend programmer to a versatile developer capable of building complete web applications.",
     placement: "Promoted within 6 months of program completion",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "I was stuck in a limited-growth backend role. The bootcamp helped me expand my skills to include modern frontend frameworks and DevOps practices.",
     previousRole: "Java Developer",
     salaryStat: "Internal promotion with 45% compensation increase",
@@ -164,7 +151,6 @@ const testimonialData = [
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The DevOps program gave me both the technical skills and the process knowledge needed to implement CI/CD pipelines and infrastructure automation.",
     placement: "Career transition completed in 4 months",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "With a traditional development background, I was looking to specialize in DevOps. The program's emphasis on practical tools and collaboration methodologies was exactly what I needed.",
     previousRole: "Software Developer",
     salaryStat: "New role with 65% better compensation package",
@@ -180,7 +166,6 @@ const corporateTestimonials = [
     company: "GlobalTech Solutions",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "Partnering with ThinkEra to upskill our IT department in ServiceNow has increased our implementation efficiency by 40% and reduced support tickets by 25%.",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "We trained 35 team members through a customized ServiceNow program, resulting in faster deployment cycles and improved internal customer satisfaction.",
   },
   {
@@ -190,7 +175,6 @@ const corporateTestimonials = [
     company: "FinServe Corp",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The specialized Salesforce training program has been transformative for our sales and customer service teams, enabling us to fully leverage our CRM investment.",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "Through ThinkEra's corporate training, we've certified over 50 employees in Salesforce, eliminating our dependency on external consultants for system management.",
   },
   {
@@ -200,7 +184,6 @@ const corporateTestimonials = [
     company: "HealthTech Innovations",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=56&h=56&q=80",
     quote: "The custom AI/ML training program has accelerated our data science capabilities, allowing us to implement predictive analytics across our healthcare solutions.",
-    companyLogo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=64&h=24&q=80",
     detailedStory: "Our team of clinical researchers and developers gained practical ML skills that have directly contributed to improving our diagnostic algorithms and patient outcomes tracking.",
   }
 ];
@@ -245,7 +228,6 @@ const SuccessStoriesPage = () => {
                       image={testimonial.image}
                       quote={testimonial.quote}
                       placement={testimonial.placement}
-                      companyLogo={testimonial.companyLogo}
                       detailedStory={testimonial.detailedStory}
                       previousRole={testimonial.previousRole}
                       salaryStat={testimonial.salaryStat}
@@ -268,7 +250,6 @@ const SuccessStoriesPage = () => {
                           image={testimonial.image}
                           quote={testimonial.quote}
                           placement={testimonial.placement}
-                          companyLogo={testimonial.companyLogo}
                           detailedStory={testimonial.detailedStory}
                           previousRole={testimonial.previousRole}
                           salaryStat={testimonial.salaryStat}
@@ -288,7 +269,6 @@ const SuccessStoriesPage = () => {
                       company={testimonial.company}
                       image={testimonial.image}
                       quote={testimonial.quote}
-                      companyLogo={testimonial.companyLogo}
                       detailedStory={testimonial.detailedStory}
                     />
                   ))}

@@ -68,23 +68,36 @@ const Navbar = () => {
             <Link to="/courses" className={`${isActive("/courses")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
               Courses
             </Link>
-            <Link to="/hackathons" className={`${isActive("/hackathons")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
+            {/* <Link to="/hackathons" className={`${isActive("/hackathons")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
               Hackathons
+            </Link> */}
+             <Link to="/corporate" className={`${isActive("/corporate")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
+              Corporate Training
             </Link>
             <Link to="/success-stories" className={`${isActive("/success-stories")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
               Success Stories
             </Link>
-            <Link to="/corporate" className={`${isActive("/corporate")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
-              Corporate Training
-            </Link>
-            <Link to="/leadership" className={`${isActive("/leadership")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
-            Leaderboard            </Link>
+           
+            {/* <Link to="/leadership" className={`${isActive("/leadership")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
+            Leaderboard            </Link> */}
             <Link to="/contact" className={`${isActive("/contact")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
             Contact        </Link>
-            <Link to="/blog" className={`${isActive("/blog")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors`}>
-            Blog         </Link>
             
-            
+            {/* Resources Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`${isActiveSubPath("/resources")} hover:text-thinkera-purple dark:hover:text-thinkera-purple-light transition-colors flex items-center`}>
+                Resources <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="/blog" className="w-full">Blog</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/assessments" className="w-full">Assessments</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-2">
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -109,31 +122,26 @@ const Navbar = () => {
               <Link to="/courses" className={`${isActive("/courses")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
                 Courses
               </Link>
-              <Link to="/hackathons" className={`${isActive("/hackathons")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
+              {/* <Link to="/hackathons" className={`${isActive("/hackathons")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
                 Hackathons
+              </Link> */}
+               <Link to="/corporate" className={`${isActive("/corporate")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
+                Corporate Training
               </Link>
               <Link to="/success-stories" className={`${isActive("/success-stories")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
                 Success Stories
               </Link>
-              <Link to="/corporate" className={`${isActive("/corporate")} py-2 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light`}>
-                Corporate Training
-              </Link>
+             
               
-              {/* Blog section for mobile */}
+              {/* Resources section for mobile */}
               <div className="py-2">
-                <div className={`${isActiveSubPath("/blog")} font-medium mb-2`}>Blog</div>
+                <div className={`${isActiveSubPath("/resources")} font-medium mb-2`}>Resources</div>
                 <div className="pl-4 flex flex-col space-y-2">
-                  <Link to="/blog/tutorials" className="text-gray-600 dark:text-gray-300 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light">
-                    Tutorials
-                  </Link>
-                  <Link to="/blog/industry-insights" className="text-gray-600 dark:text-gray-300 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light">
-                    Industry Insights
-                  </Link>
-                  <Link to="/blog/career-tips" className="text-gray-600 dark:text-gray-300 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light">
-                    Career Tips
-                  </Link>
                   <Link to="/blog" className="text-gray-600 dark:text-gray-300 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light">
-                    All Posts
+                    Blog
+                  </Link>
+                  <Link to="/assessments" className="text-gray-600 dark:text-gray-300 hover:text-thinkera-purple dark:hover:text-thinkera-purple-light">
+                    Assessments
                   </Link>
                 </div>
               </div>

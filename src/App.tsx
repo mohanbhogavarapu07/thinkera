@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -16,6 +15,7 @@ import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact.tsx";
+import Assessments from "./pages/Assessments";
 // Create a new QueryClient instance with default options
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -46,6 +46,7 @@ const App = () => {
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
                 <Route path="/blog/:slug" element={<BlogDetail />} />
+              <Route path="/assessments" element={<Assessments />} />
               {/* Blog Routes */}
               
               

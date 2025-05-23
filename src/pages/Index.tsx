@@ -291,7 +291,7 @@ const Index = () => {
           </div>
         </section>
         
-        <HackathonSection />
+        {/* <HackathonSection /> */}
         <SuccessStories />
         {corporateSection}
       </main>
