@@ -132,6 +132,40 @@ const courseDataExtended = [
       'Anyone who wants to understand how to use AI effectively and safely',
       'No prior computer programming or AI knowledge is needed'
     ]
+  },
+  {
+    id: 4,
+    title: 'Prompt Engineering 1-Day Workshop',
+    description: 'A comprehensive 1-day workshop for 12th-grade students to master AI and prompt engineering.',
+    longDescription: 'Join us for an exciting one-day "AI Adventure" workshop designed specifically for 12th-grade students! Learn how to effectively communicate with AI through prompt engineering, understand Large Language Models (LLMs), and discover how these skills can enhance your studies and creativity. Perfect for students from all streams - Science, Commerce, Arts, and Humanities. No prior technical knowledge required!',
+    icon: 'Brain',
+    category: 'Future Tech Explorers',
+    level: 'Beginner',
+    duration: '1 Day (5.5 hours)',
+    certification: true,
+    price: '₹999',
+    instructor: 'Ms. Diya Sharma',
+    startDates: ['July 12, 2025'],
+    color: 'from-purple-500 to-indigo-600',
+    modules: [
+      'Welcome to the World of AI! (10:00 AM - 11:00 AM)',
+      'The Magic of Prompts (11:15 AM - 12:30 PM)',
+      'AI for Creativity & School (1:30 PM - 3:00 PM)',
+      'Explore Cool AI Tools & Be a Smart User (3:15 PM - 4:30 PM)'
+    ],
+    skills: [
+      'Basic understanding of AI and LLMs',
+      'How to write simple and effective prompts',
+      'Experience using AI for creative and learning tasks',
+      'Awareness of ethical AI use',
+      'A glimpse into how AI will impact your future'
+    ],
+    prerequisites: [
+      'All 12th-grade students (Science, Commerce, Arts/Humanities, and other streams)',
+      'Curious minds eager to learn about the latest technology',
+      'Anyone who wants to understand how to use AI effectively and safely',
+      'No prior computer programming or AI knowledge is needed'
+    ]
   }
 ];
 
