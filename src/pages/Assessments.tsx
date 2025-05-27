@@ -6,7 +6,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
   Search, Filter,
-  Clock, Award, ChevronRight, BookOpen
+  Clock, Award, ChevronRight, BookOpen,
+  Brain, Rocket, Lightbulb, Puzzle
 } from 'lucide-react';
 
 const Assessments = () => {
@@ -16,6 +17,58 @@ const Assessments = () => {
 
   const categories = ['All', 'Technical', 'Soft Skills', 'Leadership', 'Industry'];
   const levels = ['All', 'Beginner', 'Intermediate', 'Advanced', 'All Levels'];
+
+  const assessments = [
+    {
+      id: 'agility-growth-compass',
+      title: 'Agility Growth Compass',
+      description: 'Evaluate your adaptability and growth mindset in the ever-evolving tech landscape.',
+      category: 'Soft Skills',
+      level: 'All Levels',
+      duration: '30 mins',
+      icon: Brain,
+      path: '/assessment/agility-growth-compass'
+    },
+    {
+      id: 'tech-pathfinder',
+      title: 'Tech Pathfinder Assessment',
+      description: 'Discover your optimal career path in technology through comprehensive skill evaluation.',
+      category: 'Technical',
+      level: 'All Levels',
+      duration: '45 mins',
+      icon: Rocket,
+      path: '/assessment/tech-pathfinder-assessment'
+    },
+    {
+      id: 'tech-potential',
+      title: 'Tech Potential Voyager',
+      description: 'Uncover your hidden potential and future growth areas in technology.',
+      category: 'Technical',
+      level: 'Intermediate',
+      duration: '40 mins',
+      icon: Lightbulb,
+      path: '/assessment/tech-potential-voyager'
+    },
+    {
+      id: 'tech-scenario',
+      title: 'Tech Scenario Solver Lab',
+      description: 'Test your problem-solving abilities in real-world technical scenarios.',
+      category: 'Technical',
+      level: 'Advanced',
+      duration: '50 mins',
+      icon: Puzzle,
+      path: '/assessment/tech-scenario-solver-lab'
+    }
+  ];
+
+  const filteredAssessments = assessments.filter(assessment => {
+    const matchesSearch = assessment.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         assessment.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || assessment.category === selectedCategory;
+    const matchesLevel = selectedLevel === 'All' || assessment.level === selectedLevel;
+    
+    return matchesSearch && matchesCategory && matchesLevel;
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -80,11 +133,48 @@ const Assessments = () => {
         {/* Assessment Listings */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="text-center py-16">
-              <BookOpen size={48} className="mx-auto text-gray-400 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-700 mb-2">No assessments available yet</h3>
-              <p className="text-gray-600">Check back soon for new assessments.</p>
-            </div>
+            {filteredAssessments.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredAssessments.map((assessment) => (
+                  <Card key={assessment.id} className="hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-12 h-12 flex items-center justify-center rounded-xl ${
+                          assessment.id === 'agility-growth-compass' ? 'bg-gradient-to-br from-emerald-500 to-teal-600' :
+                          assessment.id === 'tech-pathfinder' ? 'bg-gradient-to-br from-amber-500 to-orange-600' :
+                          assessment.id === 'tech-potential' ? 'bg-gradient-to-br from-rose-500 to-pink-600' :
+                          'bg-gradient-to-br from-indigo-500 to-violet-600'
+                        }`}>
+                          <assessment.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800">{assessment.title}</h3>
+                      </div>
+                      <p className="text-gray-600 mb-4 line-clamp-2">{assessment.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="px-3 py-1 bg-thinkera-purple/10 rounded-full text-sm text-thinkera-purple font-medium">
+                          {assessment.category}
+                        </span>
+                        <span className="px-3 py-1 bg-thinkera-blue/10 rounded-full text-sm text-thinkera-blue font-medium">
+                          {assessment.level}
+                        </span>
+                      </div>
+                      <Link to={assessment.path}>
+                        <Button className="w-full bg-gradient-to-r from-thinkera-purple to-thinkera-blue hover:from-thinkera-purple/90 hover:to-thinkera-blue/90 text-white">
+                          Start Assessment
+                          <ChevronRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-16">
+                <BookOpen size={48} className="mx-auto text-gray-400 mb-4" />
+                <h3 className="text-2xl font-semibold text-gray-700 mb-2">No assessments found</h3>
+                <p className="text-gray-600">Try adjusting your filters or search terms.</p>
+              </div>
+            )}
           </div>
         </section>
       </main>
