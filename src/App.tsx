@@ -16,6 +16,7 @@ import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact.tsx";
 import Assessments from "./pages/Assessments";
+
 // Create a new QueryClient instance with default options
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,38 +27,35 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => {
+function App() {
   return (
-    <React.StrictMode>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <BrowserRouter>
+          <div className="min-h-screen bg-background">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/courses" element={<Courses />} />
-              <Route path="/courses/:courseId" element={<CourseDetail />} />
+              <Route path="/courses/:id" element={<CourseDetail />} />
               <Route path="/hackathons" element={<Hackathons />} />
               <Route path="/success-stories" element={<SuccessStoriesPage />} />
               <Route path="/corporate" element={<Corporate />} />
               <Route path="/leadership" element={<Leadership />} />
-             
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/contact" element={<Contact />} />
-                <Route path="/blog/:slug" element={<BlogDetail />} />
               <Route path="/assessments" element={<Assessments />} />
-              {/* Blog Routes */}
               
-              
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+  
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </React.StrictMode>
+          </div>
+          <Toaster />
+          <Sonner />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
-};
+}
 
 export default App;

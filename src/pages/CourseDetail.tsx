@@ -166,6 +166,101 @@ const courseDataExtended = [
       'Anyone who wants to understand how to use AI effectively and safely',
       'No prior computer programming or AI knowledge is needed'
     ]
+  },
+  {
+    id: 5,
+    title: 'Professional Scrum Master Certification Training',
+    description: 'Master the Scrum framework and Agile mindset to excel as a Scrum Master.',
+    longDescription: 'This comprehensive course provides in-depth knowledge of the Scrum framework and the Agile mindset, preparing you to excel as a Scrum Master. You\'ll gain a strong understanding of Scrum roles, events, artifacts, and the underlying principles. Through interactive sessions, practical exercises, and real-world case studies, this training equips you with the skills to effectively lead and coach Agile teams, facilitate Scrum events, remove impediments, and foster a culture of continuous improvement. This course also prepares you for a leading Scrum Master industry certification.',
+    icon: 'Users',
+    category: 'Agile & Scrum',
+    level: 'Intermediate',
+    duration: '4 Weeks',
+    certification: true,
+    price: '₹24,999',
+    instructor: 'Mr. Rohan Kulkarni',
+    startDates: ['July 20, 2025', 'September 7, 2025'],
+    color: 'from-green-500 to-emerald-600',
+    modules: [
+      'Foundations of Agile & Scrum',
+      'Scrum Roles & Accountabilities',
+      'Scrum Events In-Depth',
+      'Scrum Artifacts & Commitments',
+      'The Definition of Done',
+      'Product Backlog Management & Estimation',
+      'Facilitation, Coaching & Servant Leadership',
+      'Managing Impediments & Fostering Self-Management',
+      'Scrum in Practice & Advanced Topics',
+      'Certification Exam Preparation'
+    ],
+    skills: [
+      'Deep Expertise in the Scrum Framework',
+      'Agile Mindset and Principles Application',
+      'Effective Facilitation of Scrum Events',
+      'Team Coaching and Mentoring',
+      'Servant Leadership Practices',
+      'Impediment Removal Techniques',
+      'Product Backlog Management Understanding',
+      'Fostering Team Self-Management',
+      'Conflict Resolution',
+      'Preparation for Industry-Recognized Scrum Master Certification'
+    ],
+    prerequisites: [
+      'General understanding of project environments or product development',
+      'While no formal Agile experience is mandatory, some exposure to team-based work is beneficial',
+      'A willingness to actively participate and collaborate',
+      'For certification, some exam providers may recommend prior reading of the Scrum Guide'
+    ]
+  },
+  {
+    id: 6,
+    title: 'Comprehensive Business Analyst Certification Program',
+    description: 'Master Business Analysis with Agile, Scrum & JIRA integration.',
+    longDescription: 'This intensive program is designed to equip you with the core competencies of Business Analysis, along with practical expertise in Agile, Scrum methodologies, and JIRA software. You\'ll learn to effectively identify business needs, elicit and manage requirements, model processes, manage stakeholders, and bridge the gap between business stakeholders and technology teams. The course includes dedicated modules and hands-on labs for Scrum fundamentals and JIRA, enabling you to thrive in modern Agile environments. This program prepares you for industry-recognized Business Analysis certifications and real-world BA challenges.',
+    icon: 'Database',
+    category: 'Business Analysis & Agile Practices',
+    level: 'Intermediate',
+    duration: '8 Weeks',
+    certification: true,
+    price: '₹39,999',
+    instructor: 'Ms. Ananya Sharma & Mr. Vijay Kumar',
+    startDates: ['August 3, 2025', 'October 12, 2025'],
+    color: 'from-blue-500 to-indigo-600',
+    modules: [
+      'Introduction to Business Analysis',
+      'Business Analysis Core Concept Model',
+      'Stakeholder Identification and Engagement',
+      'Requirements Elicitation & Collaboration',
+      'Requirements Analysis and Documentation',
+      'Process and Data Modeling',
+      'Solution Evaluation & Validation',
+      'Agile & Scrum Integration for BAs',
+      'JIRA for Business Analysis',
+      'BA Toolkit & Soft Skills',
+      'Capstone Project'
+    ],
+    skills: [
+      'Requirements Engineering',
+      'Stakeholder Management & Communication',
+      'Business Process Modeling',
+      'Data Analysis & Interpretation',
+      'Agile Methodologies & Scrum Framework',
+      'User Story Writing & Acceptance Criteria',
+      'Product Backlog Management',
+      'JIRA Software Proficiency',
+      'Wireframing & Prototyping',
+      'Solution Assessment & Validation',
+      'Critical Thinking & Problem Solving',
+      'Documentation (BRD, SRS, Use Cases)',
+      'Preparation for BA Certifications'
+    ],
+    prerequisites: [
+      'Bachelor\'s degree in any discipline or equivalent work experience',
+      'Strong analytical thinking and problem-solving abilities',
+      'Good verbal and written communication skills',
+      'Basic computer literacy and familiarity with office productivity tools',
+      'An interest in understanding business processes and technology solutions'
+    ]
   }
 ];
 
