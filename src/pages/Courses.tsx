@@ -8,75 +8,81 @@ import {
   Cloud, Database, Server, Code, 
   Brain, Users, Search, Filter,
   Clock, Award, ChevronRight, BookOpen,
-  MessageSquare, Sparkles
+  MessageSquare, Sparkles, FileText
 } from 'lucide-react';
 
 export const allCourses = [
   {
     id: 1,
     title: 'ServiceNow Administration Certification Course',
-    description: 'Master ServiceNow platform administration and prepare for the CSA exam. Learn to automate workflows, manage users and data, and ensure platform alignment with business needs.',
+    description: 'Master ServiceNow platform administration and earn your CSA certification with our comprehensive training program.',
     icon: Server,
     category: 'ServiceNow',
+    courseType: 'ServiceNow',
     level: 'Intermediate',
     duration: '12 weeks',
     certification: true,
-    color: 'from-indigo-500 to-purple-600',
+    color: 'from-blue-600 to-blue-800'
   },
   {
     id: 2,
-    title: 'Prompt Engineering & LLM Interfacing',
-    description: 'Master the art of prompt engineering for Large Language Models. Learn to craft effective prompts, optimize AI responses, and unlock the full potential of generative AI.',
-    icon: MessageSquare,
-    category: 'Generative AI',
-    level: 'Intermediate',
+    title: 'Prompt Engineering Masterclass',
+    description: 'Learn to craft effective prompts and master the art of working with Large Language Models.',
+    icon: Brain,
+    category: 'Prompt Engineering',
+    courseType: 'Prompt Engineering',
+    level: 'Beginner',
     duration: '8 weeks',
     certification: true,
-    color: 'from-blue-500 to-cyan-600',
+    color: 'from-purple-600 to-purple-800'
   },
   {
     id: 3,
-    title: 'AI Adventure: Mastering Prompts!',
-    description: 'A 1-Day Workshop for 12th Graders to explore the world of AI and prompt engineering. No coding required - just bring your curiosity!',
-    icon: Sparkles,
-    category: 'Future Tech Explorers',
-    level: 'Beginner',
+    title: 'Prompt Engineering Workshop for Engineering Students',
+    description: 'A one-day intensive workshop introducing engineering students to prompt engineering fundamentals and practical applications with LLMs.',
+    icon: Brain,
+    category: 'Prompt Engineering',
+    courseType: 'Prompt Engineering',
+    level: 'Beginner to Intermediate',
     duration: '1 Day',
     certification: true,
-    color: 'from-pink-500 to-rose-600',
+    color: 'from-purple-600 to-purple-800'
   },
   {
     id: 4,
-    title: 'Prompt Engineering 1-Day Workshop',
-    description: 'A comprehensive 1-day workshop for 12th-grade students to master AI and prompt engineering. Perfect for students from all streams.',
+    title: 'AI Adventure: Prompt Engineering for 12th Graders',
+    description: 'A fun and interactive one-day workshop introducing 12th-grade students to the exciting world of AI and prompt engineering.',
     icon: Brain,
-    category: 'Future Tech Explorers',
+    category: 'Prompt Engineering',
+    courseType: 'Prompt Engineering',
     level: 'Beginner',
-    duration: '1 Day (5.5 hours)',
+    duration: '1 Day',
     certification: true,
-    color: 'from-purple-500 to-indigo-600',
+    color: 'from-purple-600 to-purple-800'
   },
   {
     id: 5,
-    title: 'Professional Scrum Master Certification Training',
-    description: 'Master the Scrum framework and Agile mindset to excel as a Scrum Master. Learn to lead and coach Agile teams, facilitate Scrum events, and foster continuous improvement.',
-    icon: Users,
+    title: 'Agile & Scrum Masterclass',
+    description: 'Master Agile methodologies and Scrum framework to lead successful software development projects.',
+    icon: MessageSquare,
     category: 'Agile & Scrum',
+    courseType: 'Agile & Scrum',
     level: 'Intermediate',
-    duration: '4 Weeks',
+    duration: '10 weeks',
     certification: true,
-    color: 'from-green-500 to-emerald-600',
+    color: 'from-green-600 to-green-800'
   },
   {
     id: 6,
-    title: 'Comprehensive Business Analyst Certification Program',
-    description: 'Master Business Analysis with Agile, Scrum & JIRA integration. Learn to identify business needs, manage requirements, and bridge the gap between stakeholders and technology teams.',
-    icon: Database,
-    category: 'Business Analysis & Agile Practices',
-    level: 'Intermediate',
-    duration: '8 Weeks',
+    title: 'Business Analysis Professional',
+    description: 'Develop essential business analysis skills and learn to bridge the gap between business needs and technical solutions.',
+    icon: FileText,
+    category: 'Business Analysis',
+    courseType: 'Business Analysis',
+    level: 'Advanced',
+    duration: '16 weeks',
     certification: true,
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-orange-600 to-orange-800'
   }
 ];
 
@@ -105,12 +111,10 @@ const Courses = () => {
 
   // Group courses by the desired categories
   const categorizedCourses = {
-    'Prompt Engineering': allCourses.filter(course => 
-      course.category === 'Generative AI' || course.category === 'Future Tech Explorers'
-    ),
-    'ServiceNow': allCourses.filter(course => course.category === 'ServiceNow'),
-    'SCRUM Master': allCourses.filter(course => course.title.includes('Scrum Master')),
-    'Business Analyst': allCourses.filter(course => course.title.includes('Business Analyst')),
+    'ServiceNow': allCourses.filter(course => course.courseType === 'ServiceNow'),
+    'Prompt Engineering': allCourses.filter(course => course.courseType === 'Prompt Engineering'),
+    'Agile & Scrum': allCourses.filter(course => course.courseType === 'Agile & Scrum'),
+    'Business Analysis': allCourses.filter(course => course.courseType === 'Business Analysis')
   };
 
   // Define categories for header display

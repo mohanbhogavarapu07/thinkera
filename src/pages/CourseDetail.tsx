@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -9,23 +9,60 @@ import {
   Calendar, ArrowLeft, GraduationCap, FileText, ArrowRight,
   Server, Database, Cloud, Code, Brain, MessageSquare, Sparkles
 } from 'lucide-react';
+import { allCourses } from './Courses';
 
-const courseDataExtended = [
-  {
-    id: 1,
-    title: 'ServiceNow Administration Certification Course',
-    description: 'Master ServiceNow platform administration and prepare for the CSA exam.',
-    longDescription: 'This course provides comprehensive training on ServiceNow administration, equipping you with the skills to manage, configure, and maintain the ServiceNow platform effectively. You\'ll learn to automate workflows, manage users and data, and ensure the platform aligns with business needs. This course prepares you for the ServiceNow Certified System Administrator (CSA) exam.',
-    icon: 'Server',
-    category: 'ServiceNow',
-    level: 'Intermediate',
-    duration: '12 weeks',
-    certification: true,
-    price: '$1,499',
-    instructor: 'Mr. Alex Chen',
-    startDates: ['July 15, 2025', 'October 10, 2025'],
-    color: 'from-indigo-500 to-purple-600',
-    modules: [
+const CourseDetail = () => {
+  const { courseId } = useParams();
+  const navigate = useNavigate();
+  const [course, setCourse] = useState(null);
+  
+  useEffect(() => {
+    const id = parseInt(courseId || '0');
+    const foundCourse = allCourses.find(c => c.id === id);
+    
+    if (!foundCourse) {
+      navigate('/courses');
+      return;
+    }
+    
+    setCourse(foundCourse);
+  }, [courseId, navigate]);
+  
+  if (!course) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">Loading...</h1>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Define course-specific details based on the course ID
+  const courseDetails = {
+    price: course.id === 1 ? '$1,499' : 
+           course.id === 2 ? '$999' :
+           course.id === 3 ? '₹2,499' :
+           course.id === 4 ? '₹999' :
+           course.id === 5 ? '₹24,999' :
+           '₹39,999',
+    instructor: course.id === 1 ? 'Mr. Alex Chen' :
+                course.id === 2 ? 'Ms. Sarah Chen' :
+                course.id === 3 ? 'Dr. Arjun Rao' :
+                course.id === 4 ? 'Ms. Diya Sharma' :
+                course.id === 5 ? 'Mr. Rohan Kulkarni' :
+                'Ms. Ananya Sharma & Mr. Vijay Kumar',
+    startDates: course.id === 1 ? ['July 15, 2025', 'October 10, 2025'] :
+                course.id === 2 ? ['August 5, 2025', 'November 12, 2025'] :
+                course.id === 3 ? ['June 28, 2025'] :
+                course.id === 4 ? ['July 12, 2025'] :
+                course.id === 5 ? ['July 20, 2025', 'September 7, 2025'] :
+                ['August 3, 2025', 'October 12, 2025'],
+    modules: course.id === 1 ? [
       'ServiceNow Platform Overview & Navigation',
       'User Administration & Security',
       'Data Management in ServiceNow',
@@ -36,275 +73,143 @@ const courseDataExtended = [
       'Reporting, Dashboards & Performance Analytics Basics',
       'Instance Management & Best Practices',
       'Scripting in ServiceNow (Introduction)'
-    ],
-    skills: [
-      'ServiceNow Platform Navigation',
-      'User and Group Management',
-      'Data Import and Management',
-      'UI Configuration and Customization',
-      'Workflow Design and Implementation',
-      'Service Catalog Management',
-      'Incident Management Basics',
-      'Report and Dashboard Creation',
-      'Instance Security and Performance Monitoring',
-      'Preparation for ServiceNow CSA Exam'
-    ],
-    prerequisites: [
-      'Basic understanding of ITIL concepts',
-      'Familiarity with database concepts',
-      'General IT experience (1-2 years recommended)',
-      'Strong problem-solving skills'
-    ]
-  },
-  {
-    id: 2,
-    title: 'Prompt Engineering & LLM Interfacing',
-    description: 'Master the art of prompt engineering for Large Language Models.',
-    longDescription: 'This course offers a deep dive into the art and science of prompt engineering for Large Language Models (LLMs). You\'ll learn how to craft effective prompts to guide AI models, optimize their responses for various tasks, and understand the nuances of interacting with state-of-the-art generative AI. This course will empower you to unlock the full potential of LLMs for creative and analytical applications.',
-    icon: 'MessageSquare',
-    category: 'Generative AI',
-    level: 'Intermediate',
-    duration: '8 weeks',
-    certification: true,
-    price: '$999',
-    instructor: 'Ms. Sarah Chen',
-    startDates: ['August 5, 2025', 'November 12, 2025'],
-    color: 'from-blue-500 to-cyan-600',
-    modules: [
+    ] : course.id === 2 ? [
       'Introduction to LLMs and Generative AI',
       'Fundamentals of Prompt Engineering',
       'Core Prompting Techniques',
       'Advanced Prompting Strategies',
-      'Prompting for Creative Text Generation & Content Creation',
+      'Prompting for Creative Text Generation',
       'Prompting for Analytical Tasks',
-      'Iterative Prompt Development & Evaluation Metrics',
-      'Ethical AI: Responsible Prompting & Mitigating Bias',
-      'Tools, APIs, and Platforms for Prompt Engineers',
-      'Future of Prompt Engineering & LLM Interaction'
-    ],
-    skills: [
-      'Effective Prompt Design & Crafting',
-      'Multi-faceted Prompting Techniques',
-      'LLM Response Evaluation',
-      'Iterative Prompt Optimization',
-      'Application-Specific Prompting',
-      'Ethical LLM Interaction',
-      'API Usage for LLMs (Basic)',
-      'Creative Problem Solving with AI'
-    ],
-    prerequisites: [
-      'Basic understanding of Artificial Intelligence concepts',
-      'Strong written English and communication skills',
-      'Familiarity with using web-based applications and APIs (beneficial, not mandatory)',
-      'An analytical and creative mindset'
-    ]
-  },
-  {
-    id: 3,
-    title: 'AI Adventure: Mastering Prompts!',
-    description: 'A 1-Day Workshop for 12th Graders to explore the world of AI and prompt engineering.',
-    longDescription: 'Ever wondered how to talk to AI and get amazing results? This one-day "AI Adventure" is your chance to dive into the exciting world of Prompt Engineering! Learn how to craft cool instructions (prompts) for Large Language Models (LLMs) – the brains behind tools like ChatGPT. Discover how this new skill can help you with your studies, unleash your creativity, and prepare you for a future powered by AI. No coding or prior tech genius needed – just bring your curiosity!',
-    icon: 'Sparkles',
-    category: 'Future Tech Explorers',
-    level: 'Beginner',
-    duration: '1 Day',
-    certification: true,
-    price: '₹999',
-    instructor: 'Ms. Diya Sharma',
-    startDates: ['July 12, 2025'],
-    color: 'from-pink-500 to-rose-600',
-    modules: [
+      'Iterative Prompt Development',
+      'Ethical AI: Responsible Prompting',
+      'Tools and Platforms for Prompt Engineers',
+      'Future of Prompt Engineering'
+    ] : course.id === 3 ? [
+      'Introduction to LLMs & Prompt Engineering',
+      'Foundations of Effective Prompting',
+      'Prompting for Engineering Tasks',
+      'Advanced Considerations & Future Scope'
+    ] : course.id === 4 ? [
       'Welcome to the World of AI!',
       'The Magic of Prompts',
       'AI for Creativity & School',
       'Explore Cool AI Tools & Be a Smart User'
-    ],
-    skills: [
-      'Basic understanding of AI and LLMs',
-      'How to write simple and effective prompts',
-      'Experience using AI for creative and learning tasks',
-      'Awareness of ethical AI use',
-      'A glimpse into how AI will impact your future'
-    ],
-    prerequisites: [
-      'All 12th-grade students (Science, Commerce, Arts/Humanities, and other streams)',
-      'Curious minds eager to learn about the latest technology',
-      'Anyone who wants to understand how to use AI effectively and safely',
-      'No prior computer programming or AI knowledge is needed'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Prompt Engineering 1-Day Workshop',
-    description: 'A comprehensive 1-day workshop for 12th-grade students to master AI and prompt engineering.',
-    longDescription: 'Join us for an exciting one-day "AI Adventure" workshop designed specifically for 12th-grade students! Learn how to effectively communicate with AI through prompt engineering, understand Large Language Models (LLMs), and discover how these skills can enhance your studies and creativity. Perfect for students from all streams - Science, Commerce, Arts, and Humanities. No prior technical knowledge required!',
-    icon: 'Brain',
-    category: 'Future Tech Explorers',
-    level: 'Beginner',
-    duration: '1 Day (5.5 hours)',
-    certification: true,
-    price: '₹999',
-    instructor: 'Ms. Diya Sharma',
-    startDates: ['July 12, 2025'],
-    color: 'from-purple-500 to-indigo-600',
-    modules: [
-      'Welcome to the World of AI! (10:00 AM - 11:00 AM)',
-      'The Magic of Prompts (11:15 AM - 12:30 PM)',
-      'AI for Creativity & School (1:30 PM - 3:00 PM)',
-      'Explore Cool AI Tools & Be a Smart User (3:15 PM - 4:30 PM)'
-    ],
-    skills: [
-      'Basic understanding of AI and LLMs',
-      'How to write simple and effective prompts',
-      'Experience using AI for creative and learning tasks',
-      'Awareness of ethical AI use',
-      'A glimpse into how AI will impact your future'
-    ],
-    prerequisites: [
-      'All 12th-grade students (Science, Commerce, Arts/Humanities, and other streams)',
-      'Curious minds eager to learn about the latest technology',
-      'Anyone who wants to understand how to use AI effectively and safely',
-      'No prior computer programming or AI knowledge is needed'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Professional Scrum Master Certification Training',
-    description: 'Master the Scrum framework and Agile mindset to excel as a Scrum Master.',
-    longDescription: 'This comprehensive course provides in-depth knowledge of the Scrum framework and the Agile mindset, preparing you to excel as a Scrum Master. You\'ll gain a strong understanding of Scrum roles, events, artifacts, and the underlying principles. Through interactive sessions, practical exercises, and real-world case studies, this training equips you with the skills to effectively lead and coach Agile teams, facilitate Scrum events, remove impediments, and foster a culture of continuous improvement. This course also prepares you for a leading Scrum Master industry certification.',
-    icon: 'Users',
-    category: 'Agile & Scrum',
-    level: 'Intermediate',
-    duration: '4 Weeks',
-    certification: true,
-    price: '₹24,999',
-    instructor: 'Mr. Rohan Kulkarni',
-    startDates: ['July 20, 2025', 'September 7, 2025'],
-    color: 'from-green-500 to-emerald-600',
-    modules: [
+    ] : course.id === 5 ? [
       'Foundations of Agile & Scrum',
       'Scrum Roles & Accountabilities',
       'Scrum Events In-Depth',
       'Scrum Artifacts & Commitments',
       'The Definition of Done',
-      'Product Backlog Management & Estimation',
-      'Facilitation, Coaching & Servant Leadership',
-      'Managing Impediments & Fostering Self-Management',
-      'Scrum in Practice & Advanced Topics',
-      'Certification Exam Preparation'
-    ],
-    skills: [
-      'Deep Expertise in the Scrum Framework',
-      'Agile Mindset and Principles Application',
-      'Effective Facilitation of Scrum Events',
-      'Team Coaching and Mentoring',
-      'Servant Leadership Practices',
-      'Impediment Removal Techniques',
-      'Product Backlog Management Understanding',
-      'Fostering Team Self-Management',
-      'Conflict Resolution',
-      'Preparation for Industry-Recognized Scrum Master Certification'
-    ],
-    prerequisites: [
-      'General understanding of project environments or product development',
-      'While no formal Agile experience is mandatory, some exposure to team-based work is beneficial',
-      'A willingness to actively participate and collaborate',
-      'For certification, some exam providers may recommend prior reading of the Scrum Guide'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Comprehensive Business Analyst Certification Program',
-    description: 'Master Business Analysis with Agile, Scrum & JIRA integration.',
-    longDescription: 'This intensive program is designed to equip you with the core competencies of Business Analysis, along with practical expertise in Agile, Scrum methodologies, and JIRA software. You\'ll learn to effectively identify business needs, elicit and manage requirements, model processes, manage stakeholders, and bridge the gap between business stakeholders and technology teams. The course includes dedicated modules and hands-on labs for Scrum fundamentals and JIRA, enabling you to thrive in modern Agile environments. This program prepares you for industry-recognized Business Analysis certifications and real-world BA challenges.',
-    icon: 'Database',
-    category: 'Business Analysis & Agile Practices',
-    level: 'Intermediate',
-    duration: '8 Weeks',
-    certification: true,
-    price: '₹39,999',
-    instructor: 'Ms. Ananya Sharma & Mr. Vijay Kumar',
-    startDates: ['August 3, 2025', 'October 12, 2025'],
-    color: 'from-blue-500 to-indigo-600',
-    modules: [
-      'Introduction to Business Analysis',
-      'Business Analysis Core Concept Model',
-      'Stakeholder Identification and Engagement',
-      'Requirements Elicitation & Collaboration',
-      'Requirements Analysis and Documentation',
-      'Process and Data Modeling',
-      'Solution Evaluation & Validation',
-      'Agile & Scrum Integration for BAs',
-      'JIRA for Business Analysis',
-      'BA Toolkit & Soft Skills',
-      'Capstone Project'
-    ],
-    skills: [
-      'Requirements Engineering',
-      'Stakeholder Management & Communication',
-      'Business Process Modeling',
-      'Data Analysis & Interpretation',
-      'Agile Methodologies & Scrum Framework',
-      'User Story Writing & Acceptance Criteria',
       'Product Backlog Management',
-      'JIRA Software Proficiency',
-      'Wireframing & Prototyping',
-      'Solution Assessment & Validation',
-      'Critical Thinking & Problem Solving',
-      'Documentation (BRD, SRS, Use Cases)',
-      'Preparation for BA Certifications'
+      'Facilitation & Coaching',
+      'Managing Impediments',
+      'Scrum in Practice',
+      'Certification Preparation'
+    ] : [
+      'Introduction to Business Analysis',
+      'Business Analysis Core Concepts',
+      'Stakeholder Management',
+      'Requirements Elicitation',
+      'Requirements Analysis',
+      'Process and Data Modeling',
+      'Solution Evaluation',
+      'Agile & Scrum Integration',
+      'JIRA for Business Analysis',
+      'BA Toolkit & Soft Skills'
     ],
-    prerequisites: [
-      'Bachelor\'s degree in any discipline or equivalent work experience',
-      'Strong analytical thinking and problem-solving abilities',
-      'Good verbal and written communication skills',
-      'Basic computer literacy and familiarity with office productivity tools',
-      'An interest in understanding business processes and technology solutions'
+    skills: course.id === 1 ? [
+      'ServiceNow Platform Navigation',
+      'User and Group Management',
+      'Data Import and Management',
+      'UI Configuration',
+      'Workflow Design',
+      'Service Catalog Management',
+      'Incident Management',
+      'Report Creation',
+      'Instance Security',
+      'CSA Exam Preparation'
+    ] : course.id === 2 ? [
+      'Effective Prompt Design',
+      'Multi-faceted Prompting',
+      'LLM Response Evaluation',
+      'Prompt Optimization',
+      'Application-Specific Prompting',
+      'Ethical LLM Interaction',
+      'API Usage for LLMs',
+      'Creative Problem Solving'
+    ] : course.id === 3 ? [
+      'Understanding LLMs',
+      'Core Prompt Engineering Principles',
+      'Technical Q&A with AI',
+      'Engineering Documentation',
+      'Problem Definition',
+      'Ethical AI Use',
+      'Research Enhancement',
+      'Project Management with AI'
+    ] : course.id === 4 ? [
+      'Basic AI Understanding',
+      'Simple Prompt Writing',
+      'Creative Writing with AI',
+      'Study Assistance',
+      'Ethical AI Use',
+      'Future AI Impact',
+      'Critical Thinking',
+      'Digital Literacy'
+    ] : course.id === 5 ? [
+      'Scrum Framework Expertise',
+      'Agile Mindset',
+      'Event Facilitation',
+      'Team Coaching',
+      'Servant Leadership',
+      'Impediment Removal',
+      'Backlog Management',
+      'Conflict Resolution'
+    ] : [
+      'Requirements Engineering',
+      'Stakeholder Management',
+      'Process Modeling',
+      'Data Analysis',
+      'Agile Methodologies',
+      'User Story Writing',
+      'JIRA Proficiency',
+      'Documentation'
+    ],
+    prerequisites: course.id === 1 ? [
+      'Basic ITIL concepts',
+      'Database knowledge',
+      'IT experience',
+      'Problem-solving skills'
+    ] : course.id === 2 ? [
+      'Basic AI understanding',
+      'Strong English skills',
+      'Web application familiarity',
+      'Analytical mindset'
+    ] : course.id === 3 ? [
+      'Engineering student status',
+      'Basic technical aptitude',
+      'Curiosity about AI',
+      'No prior AI experience needed'
+    ] : course.id === 4 ? [
+      '12th-grade student',
+      'Curiosity about technology',
+      'No prior AI knowledge needed',
+      'Basic computer skills'
+    ] : course.id === 5 ? [
+      'Project environment understanding',
+      'Team-based work experience',
+      'Active participation',
+      'Scrum Guide familiarity'
+    ] : [
+      'Bachelor\'s degree or experience',
+      'Analytical thinking',
+      'Communication skills',
+      'Computer literacy',
+      'Business process interest'
     ]
-  }
-];
+  };
 
-const CourseDetail = () => {
-  const { courseId } = useParams();
-  const id = parseInt(courseId || '1');
-  
-  // Find the course with the matching ID
-  const course = courseDataExtended.find(c => c.id === id);
-  
-  if (!course) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">Course Not Found</h1>
-            <p className="text-lg text-gray-600 mb-8">The course you're looking for doesn't exist or has been removed.</p>
-            <Link to="/courses">
-              <Button className="bg-brand-purple">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Courses
-              </Button>
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-  
   // For color rendering
-  let IconComponent;
-  switch(course.icon) {
-    case 'Server': IconComponent = <Server size={32} />; break;
-    case 'Database': IconComponent = <Database size={32} />; break;
-    case 'Cloud': IconComponent = <Cloud size={32} />; break;
-    case 'Code': IconComponent = <Code size={32} />; break;
-    case 'Brain': IconComponent = <Brain size={32} />; break;
-    case 'Users': IconComponent = <Users size={32} />; break;
-    case 'MessageSquare': IconComponent = <MessageSquare size={32} />; break;
-    case 'Sparkles': IconComponent = <Sparkles size={32} />; break;
-    default: IconComponent = <BookOpen size={32} />;
-  }
+  const IconComponent = course.icon;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -322,7 +227,7 @@ const CourseDetail = () => {
                 </Link>
                 <div className="flex items-center mb-4">
                   <div className="w-16 h-16 rounded-lg bg-white bg-opacity-15 flex items-center justify-center mr-4">
-                    {IconComponent}
+                    {React.createElement(IconComponent, { size: 32 })}
                   </div>
                   <div className="inline-flex items-center px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">
                     {course.category}
@@ -330,7 +235,7 @@ const CourseDetail = () => {
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">{course.title}</h1>
                 <p className="text-xl text-white text-opacity-90 mb-6 max-w-2xl">
-                  {course.longDescription}
+                  {course.description}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center bg-white bg-opacity-15 px-4 py-2 rounded-md">
@@ -351,7 +256,7 @@ const CourseDetail = () => {
               </div>
               <div className="bg-white rounded-lg p-6 shadow-lg w-full md:w-auto">
                 <div className="text-center mb-6">
-                  <p className="text-3xl font-bold text-brand-dark">{course.price}</p>
+                  <p className="text-3xl font-bold text-brand-dark">{courseDetails.price}</p>
                   <p className="text-gray-500">Complete Course</p>
                 </div>
                 <Button className="w-full bg-brand-purple mb-4">Enroll Now</Button>
@@ -361,14 +266,14 @@ const CourseDetail = () => {
                     <Calendar className="text-brand-purple mt-1 mr-2 h-5 w-5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-brand-dark">Next Batch Starts</p>
-                      <p className="text-gray-500 text-sm">{course.startDates[0]}</p>
+                      <p className="text-gray-500 text-sm">{courseDetails.startDates[0]}</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <GraduationCap className="text-brand-purple mt-1 mr-2 h-5 w-5 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-brand-dark">Instructor</p>
-                      <p className="text-gray-500 text-sm">{course.instructor}</p>
+                      <p className="text-gray-500 text-sm">{courseDetails.instructor}</p>
                     </div>
                   </div>
                 </div>
@@ -384,7 +289,7 @@ const CourseDetail = () => {
               <div className="lg:col-span-2">
                 <h2 className="text-2xl font-bold text-brand-dark mb-6">What You'll Learn</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {course.modules.map((module, index) => (
+                  {courseDetails.modules.map((module, index) => (
                     <div key={index} className="flex items-start">
                       <CheckCircle className="text-green-500 mt-1 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{module}</span>
@@ -394,7 +299,7 @@ const CourseDetail = () => {
 
                 <h2 className="text-2xl font-bold text-brand-dark mb-6">Course Modules</h2>
                 <div className="space-y-4 mb-8">
-                  {course.modules.map((module, index) => (
+                  {courseDetails.modules.map((module, index) => (
                     <Card key={index} className="overflow-hidden">
                       <CardContent className="p-0">
                         <div className="p-4 flex justify-between items-center">
@@ -412,7 +317,7 @@ const CourseDetail = () => {
 
                 <h2 className="text-2xl font-bold text-brand-dark mb-6">Prerequisites</h2>
                 <div className="space-y-2 mb-8">
-                  {course.prerequisites.map((prereq, index) => (
+                  {courseDetails.prerequisites.map((prereq, index) => (
                     <div key={index} className="flex items-start">
                       <CheckCircle className="text-brand-purple mt-1 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{prereq}</span>
@@ -424,7 +329,7 @@ const CourseDetail = () => {
               <div>
                 <h2 className="text-2xl font-bold text-brand-dark mb-6">Skills You'll Gain</h2>
                 <div className="space-y-2 mb-8">
-                  {course.skills.map((skill, index) => (
+                  {courseDetails.skills.map((skill, index) => (
                     <div key={index} className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-medium text-gray-700 mr-2 mb-2">
                       {skill}
                     </div>
@@ -454,7 +359,7 @@ const CourseDetail = () => {
                       <div className="flex justify-between">
                         <span className="text-gray-600">Start Dates</span>
                         <div className="text-right">
-                          {course.startDates.map((date, index) => (
+                          {courseDetails.startDates.map((date, index) => (
                             <div key={index} className="font-medium text-gray-800">{date}</div>
                           ))}
                         </div>
@@ -481,25 +386,17 @@ const CourseDetail = () => {
 
         {/* Related Courses */}
         <section className="py-16 bg-gray-50">
-          <div className="container-section">
+          <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold text-brand-dark mb-8">Related Courses</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {courseDataExtended
+              {allCourses
                 .filter(c => c.category === course.category && c.id !== course.id)
                 .slice(0, 3)
                 .map(relatedCourse => (
                   <Card key={relatedCourse.id} className="h-full card-hover">
                     <CardContent className="p-6 h-full flex flex-col">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${relatedCourse.color} text-white flex items-center justify-center mb-4`}>
-                        {/* Render icon based on the icon name */}
-                        {relatedCourse.icon === 'Server' && <Server size={24} />}
-                        {relatedCourse.icon === 'Database' && <Database size={24} />}
-                        {relatedCourse.icon === 'Cloud' && <Cloud size={24} />}
-                        {relatedCourse.icon === 'Code' && <Code size={24} />}
-                        {relatedCourse.icon === 'Brain' && <Brain size={24} />}
-                        {relatedCourse.icon === 'Users' && <Users size={24} />}
-                        {relatedCourse.icon === 'MessageSquare' && <MessageSquare size={24} />}
-                        {relatedCourse.icon === 'Sparkles' && <Sparkles size={24} />}
+                        {React.createElement(relatedCourse.icon, { size: 24 })}
                       </div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="bg-brand-purple bg-opacity-10 text-brand-purple text-xs font-medium px-2.5 py-0.5 rounded">
